@@ -36,6 +36,8 @@ main {
   grid-area: main;
 }
 
-footer {
-  grid-area: footer;
+@media screen and (min-width: 500px) and (max-height: 850px) {
+  .hero {
+    max-width: 350px;
+  }
 }
