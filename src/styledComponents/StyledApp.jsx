@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import device from "./device";
 
 const StyledApp = styled.header`
   width: 100vw;
@@ -6,7 +7,7 @@ const StyledApp = styled.header`
   display: grid;
   grid-template-areas: "header" "main" "footer";
 
-  @media screen and (min-width: 1024px) {
+  @media ${device.tabletLandscape} {
     grid-template-areas: "header main" "header footer";
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr auto;
