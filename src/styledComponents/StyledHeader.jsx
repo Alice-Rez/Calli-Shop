@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
-  height: 100vh;
+  min-height: 100vh;
   grid-area: header;
   background-color: var(--black);
   text-align: center;

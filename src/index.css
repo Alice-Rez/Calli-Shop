@@ -25,3 +25,8 @@ body {
   margin: 0;
   font-family: var(--text);
 }
+
+.hero {
+  width: 100%;
+  max-width: 500px;
+}
