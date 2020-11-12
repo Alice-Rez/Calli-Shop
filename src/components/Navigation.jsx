@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import StyledNav from "../styledComponents/StyledNavbar";
 import { Link } from "react-router-dom";
 import basket from "../assets/images/basket.svg";
+import StyledLink from "../styledComponents/StyledLink";
 
 export default function Navigation() {
   const [basketVisible, setBasketVisible] = useState(false);
   return (
     <StyledNav>
       {!basketVisible ? (
-        <Link
+        <StyledLink
           to="/basket"
           onClick={() => {
             setBasketVisible(true);
@@ -16,16 +17,16 @@ export default function Navigation() {
         >
           <span>0</span>
           <img class="basket" src={basket} alt="" />
-        </Link>
+        </StyledLink>
       ) : (
-        <Link
+        <StyledLink
           to="/"
           onClick={() => {
             setBasketVisible(false);
           }}
         >
           Products
-        </Link>
+        </StyledLink>
       )}
     </StyledNav>
   );
