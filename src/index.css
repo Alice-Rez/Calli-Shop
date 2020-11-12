@@ -32,10 +32,6 @@ body {
   max-width: 500px;
 }
 
-main {
-  grid-area: main;
-}
-
 @media screen and (min-width: 500px) and (max-height: 850px) {
   .hero {
     max-width: 350px;
