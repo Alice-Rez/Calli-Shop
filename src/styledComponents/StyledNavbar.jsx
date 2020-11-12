@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const StyledNav = styled.nav`
+  height: 80px;
   grid-area: nav;
   position: sticky;
   top: 0;
