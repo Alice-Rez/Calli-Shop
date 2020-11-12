@@ -2,7 +2,6 @@ import styled from "styled-components";
 import device from "./device";
 
 const StyledApp = styled.section`
-  width: 100vw;
   min-height: 100vh;
   display: grid;
   grid-template-areas: "header" "main" "footer";

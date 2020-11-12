@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import device from "./device";
 
 const StyledHeader = styled.header`
-  min-height: 100vh;
+  height: 100vh;
   grid-area: header;
   background-color: var(--black);
   text-align: center;
@@ -9,6 +10,11 @@ const StyledHeader = styled.header`
 
   display: grid;
   grid-template-rows: auto 1fr auto;
+
+  @media ${device.tabletLandscape} {
+    position: sticky;
+    top: 0;
+  }
 `;
 
 export default StyledHeader;

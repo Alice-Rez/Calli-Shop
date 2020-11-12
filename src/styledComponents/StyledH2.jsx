@@ -8,7 +8,7 @@ const StyledH2 = styled.h2`
   padding-top: var(--space-medium);
   font-weight: 400;
 
-  @media ${device.desktop} {
+  @media ${device.tabletLandscape} {
     display: block;
   }
 `;
