@@ -3,14 +3,17 @@ import StyledH1 from "../styledComponents/StyledH1";
 import StyledHeader from "../styledComponents/StyledHeader";
 import shoDo from "../assets/images/sho-do.svg";
 import StyledH2 from "../styledComponents/StyledH2";
+import StyledFigure from "../styledComponents/StyledFigure";
 
 export default function Header() {
   return (
     <StyledHeader>
       <StyledH1>Calli-SHOP</StyledH1>
-      <figure>
+
+      <StyledFigure>
         <img src={shoDo} alt="" />
-      </figure>
+      </StyledFigure>
+
       <StyledH2>"The way of writing"</StyledH2>
     </StyledHeader>
   );

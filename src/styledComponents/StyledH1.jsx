@@ -7,8 +7,7 @@ const StyledH1 = styled.h1`
   font-weight: 900;
   font-size: 3rem;
   padding: var(--space-small);
-  /* padding-top: 0; */
-  margin-bottom: var(--space-small);
+  margin: 0 auto;
   @media ${device.bigDesktop} {
     font-size: 4rem;
   }
