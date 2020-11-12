@@ -7,6 +7,7 @@ export default function Navigation() {
     <StyledNav>
       <span>0</span>
       <img class="basket" src={basket} alt="" />
+      <span>Products</span>
     </StyledNav>
   );
 }

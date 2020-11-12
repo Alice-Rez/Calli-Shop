@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Basket from "./components/Basket";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -9,16 +10,24 @@ import StyledMain from "./styledComponents/StyledMain";
 
 function App() {
   return (
-    <StyledApp>
-      <Header />
-      <Navigation />
-      <StyledMain>
-        <Products />
-        <Basket />
-      </StyledMain>
+    <Router>
+      <StyledApp>
+        <Header />
+        <Navigation />
+        <StyledMain>
+          <Switch>
+            <Route path="/" exact>
+              <Products />
+            </Route>
+            <Route path="/basket">
+              <Basket />
+            </Route>
+          </Switch>
+        </StyledMain>
 
-      <Footer />
-    </StyledApp>
+        <Footer />
+      </StyledApp>
+    </Router>
   );
 }
 
