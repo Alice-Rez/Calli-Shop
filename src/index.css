@@ -3,6 +3,9 @@
 :root {
   --display: "Dancing Script", cursive;
   --text: "Raleway", sans-serif;
+
+  --black: #1e0f0d;
+  --red-light: #da6464;
 }
 
 html {
