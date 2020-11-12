@@ -14,7 +14,7 @@ export default function Header() {
         <img className="hero" src={shoDo} alt="" />
       </StyledFigure>
 
-      <StyledH2>"The way of writing"</StyledH2>
+      <StyledH2>"The journey of writing"</StyledH2>
     </StyledHeader>
   );
 }
