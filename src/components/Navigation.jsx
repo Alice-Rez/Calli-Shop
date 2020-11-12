@@ -16,7 +16,7 @@ export default function Navigation() {
           }}
         >
           <span>0</span>
-          <img class="basket" src={basket} alt="" />
+          <img src={basket} alt="" />
         </StyledLink>
       ) : (
         <StyledLink

@@ -9,8 +9,12 @@ const StyledLink = styled(Link)`
   align-items: center;
   justify-content: flex-end;
 
-  & span {
+  span {
     font-size: 1.5rem;
+  }
+
+  img {
+    width: 50px;
   }
 `;
 

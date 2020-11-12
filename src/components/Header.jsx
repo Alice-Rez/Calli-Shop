@@ -11,7 +11,7 @@ export default function Header() {
       <StyledH1>Calli-SHOP</StyledH1>
 
       <StyledFigure>
-        <img className="hero" src={shoDo} alt="" />
+        <img src={shoDo} alt="" />
       </StyledFigure>
 
       <StyledH2>"The journey of writing"</StyledH2>
