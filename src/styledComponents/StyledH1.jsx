@@ -5,6 +5,7 @@ const StyledH1 = styled.header`
   font-family: var(--display);
   font-weight: 900;
   font-size: 3rem;
+  padding: var(--space-small);
   color: var(--white);
 `;
 
