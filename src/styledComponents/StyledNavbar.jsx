@@ -2,9 +2,13 @@ import styled from "styled-components";
 
 const StyledNav = styled.nav`
   grid-area: nav;
-  text-align: right;
   position: sticky;
   top: 0;
+  padding: var(--space-medium);
+  padding-top: var(--space-small);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 `;
 
 export default StyledNav;
