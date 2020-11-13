@@ -13,8 +13,8 @@ const StyledCard = styled.article`
 
   img {
     height: 300px;
-    object-fit: contain;
-    padding: 1em 0em 0.5em;
+    object-fit: cover;
+    padding: var(--space-medium);
   }
 `;
 
