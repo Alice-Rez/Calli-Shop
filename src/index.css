@@ -10,6 +10,8 @@
 
   --space-small: 0.75em;
   --space-medium: 1.5em;
+  --space-larger: 2em;
+  --space-large: 3em;
 }
 
 html {

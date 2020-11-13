@@ -45,8 +45,8 @@ export default function Card(props) {
     <StyledCard>
       <img src={image} className="card-img-top" alt={alt} />
       <div className="card-body">
-        <h5 className="card-title">{name}</h5>
-        <h6 className="card-subtitle mb-2 text-muted">{style}</h6>
+        <h4 className="card-title">{name}</h4>
+        <h5 className="card-subtitle mb-2 text-muted">{style}</h5>
         <p className="card-text">{details}</p>
         <p className="price">
           <strong>{price} &#8364;</strong>
