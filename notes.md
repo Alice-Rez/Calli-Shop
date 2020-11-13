@@ -5,3 +5,5 @@ pallete:
 #760000
 #f5ebeb
 #feedc4
+
+red: #b50b0b
