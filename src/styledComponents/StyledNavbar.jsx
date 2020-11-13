@@ -10,6 +10,7 @@ const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  /* background-color: white; */
 `;
 
 export default StyledNav;
