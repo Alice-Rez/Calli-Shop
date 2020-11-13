@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import StyledCardDeck from "../styledComponents/StyledCardDeck";
+import Card from "./Card";
 
 export default function Products() {
   const products = useSelector((state) => state.products);
@@ -13,11 +14,11 @@ export default function Products() {
         </strong>
       </p>
 
-      <StyledCardDeck></StyledCardDeck>
-
-      {products.map((product) => (
-        <p>{product.name}</p>
-      ))}
+      <StyledCardDeck>
+        {products.map((product, index) => (
+          <Card product={product} key={index} />
+        ))}
+      </StyledCardDeck>
     </section>
   );
 }
