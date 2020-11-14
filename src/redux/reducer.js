@@ -14,14 +14,29 @@ const reducer = (state = initialState, action) => {
         products: changedProducts,
       };
     case "ADD_ITEM":
-      return {
-        ...state,
-        order: {
-          ...state.order,
-          itemsNr: state.order.itemsNr + 1,
-          items: [...state.order.items, action.payload],
-        },
-      };
+      let itemExists = false;
+      let changedItems = state.order.items.map((item) => {
+        if (item.id === action.payload.id) {
+          item.qty = item.qty + action.payload.qty;
+          itemExists = true;
+        }
+        return item;
+      });
+      if (!itemExists) {
+        return {
+          ...state,
+          order: {
+            ...state.order,
+            itemsNr: state.order.itemsNr + 1,
+            items: [...state.order.items, action.payload],
+          },
+        };
+      } else {
+        return {
+          ...state,
+          order: { ...state.order, items: changedItems },
+        };
+      }
     default:
       return state;
   }
