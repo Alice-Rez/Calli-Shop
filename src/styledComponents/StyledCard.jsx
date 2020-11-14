@@ -33,6 +33,7 @@ const StyledCard = styled.article`
     font-weight: 900;
     font-size: 1.5rem;
     transform: rotate(-7deg);
+    color: var(--primary);
   }
 `;
 

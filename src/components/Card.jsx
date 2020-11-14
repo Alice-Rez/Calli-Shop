@@ -7,6 +7,7 @@ import arigato from "../assets/images/products/arigato.svg";
 import names from "../assets/images/products/names.svg";
 import strongWill from "../assets/images/products/strong-will.svg";
 import samuraiJourney from "../assets/images/products/virtue-of-samurai/samurai-journey.svg";
+import StyledButton from "../styledComponents/StyledButton";
 
 export default function Card(props) {
   const {
@@ -68,7 +69,7 @@ export default function Card(props) {
           <strong>{price} &#8364;</strong>
         </p>
         {available ? (
-          <button>Buy</button>
+          <StyledButton primary>Buy</StyledButton>
         ) : (
           <p className="sold-out">Sold out</p>
         )}
