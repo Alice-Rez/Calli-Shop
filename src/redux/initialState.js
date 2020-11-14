@@ -1,4 +1,8 @@
 const initialState = {
+  order: {
+    itemsNr: 0,
+    items: [],
+  },
   products: [
     {
       id: 1,
