@@ -11,6 +11,7 @@ import StyledButton from "../styledComponents/StyledButton";
 import SpinControl from "./SpinControl";
 import { useDispatch } from "react-redux";
 import { addItemToOrder, changeProductStock } from "../redux/actions";
+import StyledFlex from "../styledComponents/StyledFlex";
 
 export default function Card(props) {
   const {
@@ -91,13 +92,13 @@ export default function Card(props) {
         <h4>{name}</h4>
         <h5>{style}</h5>
         <p>{details}</p>
-        <p>
+        <StyledFlex>
           <strong>{price} &#8364;</strong>
           <SpinControl item={item} available={available} setQty={setItem} />
-        </p>
+        </StyledFlex>
         {item.qty > 0 ? (
           <StyledButton primary onClick={buyItem}>
-            Buy
+            Add to basket
           </StyledButton>
         ) : (
           <p className="sold-out">Sold out</p>
