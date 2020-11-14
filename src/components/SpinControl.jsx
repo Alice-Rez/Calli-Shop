@@ -1,19 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { changeProductStock } from "../redux/actions";
 import StyledButton from "../styledComponents/StyledButton";
 import StyledInput from "../styledComponents/StyledInput";
 
 export default function SpinControl(props) {
   const { item, available, setQty } = props;
 
+  const dispatch = useDispatch();
+
+  // Because I need at beginning change the stock of the product, because there is already 1 quantity chosen by default
+
+  useEffect(() => {
+    dispatch(changeProductStock(item.id, -1));
+  }, [item.id, dispatch]);
+
   const increaseQty = () => {
     if (available > 0) {
       setQty({ ...item, qty: item.qty + 1 });
+      dispatch(changeProductStock(item.id, -1));
     }
   };
 
   const decreaseQty = () => {
     if (item.qty > 1) {
       setQty({ ...item, qty: item.qty - 1 });
+      dispatch(changeProductStock(item.id, 1));
     }
   };
 
