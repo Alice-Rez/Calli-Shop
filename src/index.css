@@ -15,6 +15,13 @@
   --space-medium: 1.5em;
   --space-larger: 2em;
   --space-large: 3em;
+
+  --shadow-big: 5px 5px 15px rgba(0, 0, 0, 0.2),
+    -5px -5px 15px rgba(255, 255, 255, 0.2);
+  --shadow-small: 3px 3px 7px rgba(0, 0, 0, 0.2),
+    -3px -3px 7px rgba(255, 255, 255, 0.2);
+  --shadow-small-darker: 3px 3px 7px rgba(0, 0, 0, 0.3),
+    -3px -3px 7px rgba(255, 255, 255, 0.3);
 }
 
 html {
