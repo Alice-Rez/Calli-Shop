@@ -2,6 +2,11 @@ const initialState = {
   order: {
     itemsNr: 0,
     items: [],
+    customer: {
+      personal: {},
+      delivery: "",
+      payment: "",
+    },
   },
   products: [
     {
