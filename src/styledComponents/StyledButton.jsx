@@ -37,11 +37,18 @@ const StyledButton = styled.button`
     css`
       width: var(--spin-control-size);
       height: var(--spin-control-size);
-      margin: 0;
+      margin: var(--space-medium) 0 var(--space-small);
       padding: 0;
       box-shadow: none;
       font-size: 0.9rem;
       font-weight: 900;
+      background-color: var(--grey);
+      color: var(--white);
+
+      :disabled {
+        background-color: transparent;
+        color: black;
+      }
     `};
 `;
 

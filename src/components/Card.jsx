@@ -68,7 +68,7 @@ export default function Card(props) {
         <p>{details}</p>
         <p>
           <strong>{price} &#8364;</strong>
-          <SpinControl qty={item.qty} />
+          <SpinControl item={item} available={available} setQty={setItem} />
         </p>
         {available ? (
           <StyledButton primary>Buy</StyledButton>
