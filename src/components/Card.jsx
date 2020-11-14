@@ -8,6 +8,7 @@ import names from "../assets/images/products/names.svg";
 import strongWill from "../assets/images/products/strong-will.svg";
 import samuraiJourney from "../assets/images/products/virtue-of-samurai/samurai-journey.svg";
 import StyledButton from "../styledComponents/StyledButton";
+import SpinControl from "./SpinControl";
 
 export default function Card(props) {
   const {
@@ -67,6 +68,7 @@ export default function Card(props) {
         <p>{details}</p>
         <p>
           <strong>{price} &#8364;</strong>
+          <SpinControl qty={item.qty} />
         </p>
         {available ? (
           <StyledButton primary>Buy</StyledButton>

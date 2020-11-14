@@ -34,6 +34,10 @@ const StyledCard = styled.article`
     transform: rotate(-7deg);
     color: var(--primary);
   }
+
+  span {
+    margin-left: var(--space-medium);
+  }
 `;
 
 export default StyledCard;
