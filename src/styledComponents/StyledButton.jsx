@@ -12,9 +12,13 @@ const StyledButton = styled.button`
   box-shadow: var(--shadow-small-darker);
   transition: transform 500ms 50ms;
 
-  :hover {
-    transform: scale(1.1);
-  }
+  ${(props) =>
+    !props.spinControl &&
+    css`
+      :hover {
+        transform: scale(1.1);
+      }
+    `}
 
   ${(props) =>
     props.primary &&
@@ -26,6 +30,18 @@ const StyledButton = styled.button`
         background-color: var(--white);
         color: var(--primary);
       }
+    `};
+
+  ${(props) =>
+    props.spinControl &&
+    css`
+      width: var(--spin-control-size);
+      height: var(--spin-control-size);
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      font-size: 0.9rem;
+      font-weight: 900;
     `};
 `;
 
