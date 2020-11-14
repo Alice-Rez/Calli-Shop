@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import device from "./device";
 
 const StyledButton = styled.button`
   border: none;

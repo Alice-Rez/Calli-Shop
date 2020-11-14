@@ -15,6 +15,10 @@ const StyledCard = styled.article`
   img {
     height: 300px;
     padding: var(--space-small);
+
+    @media screen and (max-width: 400px) {
+      height: 190px;
+    }
   }
 
   h4 {
