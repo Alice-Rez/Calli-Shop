@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import StyledNav from "../styledComponents/StyledNavbar";
-import { Link } from "react-router-dom";
 import basket from "../assets/images/basket.svg";
 import StyledLink from "../styledComponents/StyledLink";
+import { useSelector } from "react-redux";
 
 export default function Navigation() {
+  const itemsNr = useSelector((state) => state.order.itemsNr);
+
   const [basketVisible, setBasketVisible] = useState(false);
+
   return (
     <StyledNav>
       {!basketVisible ? (
@@ -15,7 +18,7 @@ export default function Navigation() {
             setBasketVisible(true);
           }}
         >
-          <span>0</span>
+          <span>{itemsNr}</span>
           <img src={basket} alt="basket icon" />
         </StyledLink>
       ) : (
