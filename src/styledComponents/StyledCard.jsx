@@ -27,6 +27,13 @@ const StyledCard = styled.article`
     color: var(--grey);
     font-size: 0.9rem;
   }
+
+  .sold-out {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.5rem;
+    transform: rotate(-7deg);
+  }
 `;
 
 export default StyledCard;
