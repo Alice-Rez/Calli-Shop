@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import StyledCard from "../styledComponents/StyledCard";
 import family from "../assets/images/products/family.svg";
 import harmony from "../assets/images/products/harmony.svg";
@@ -9,7 +9,23 @@ import strongWill from "../assets/images/products/strong-will.svg";
 import samuraiJourney from "../assets/images/products/virtue-of-samurai/samurai-journey.svg";
 
 export default function Card(props) {
-  const { name, style, img, details, price, available, alt } = props.product;
+  const {
+    id,
+    name,
+    style,
+    img,
+    details,
+    price,
+    available,
+    alt,
+  } = props.product;
+
+  const [item, setItem] = useState({
+    id,
+    name,
+    price,
+    qty: 1,
+  });
 
   let image;
 
@@ -45,12 +61,17 @@ export default function Card(props) {
     <StyledCard>
       <img src={image} className="card-img-top" alt={alt} />
       <div className="card-body">
-        <h4 className="card-title">{name}</h4>
-        <h5 className="card-subtitle mb-2 text-muted">{style}</h5>
-        <p className="card-text">{details}</p>
-        <p className="price">
+        <h4>{name}</h4>
+        <h5>{style}</h5>
+        <p>{details}</p>
+        <p>
           <strong>{price} &#8364;</strong>
         </p>
+        {available ? (
+          <button>Buy</button>
+        ) : (
+          <p className="sold-out">Sold out</p>
+        )}
       </div>
     </StyledCard>
   );

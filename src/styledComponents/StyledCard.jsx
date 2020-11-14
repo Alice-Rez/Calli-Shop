@@ -11,6 +11,7 @@ const StyledCard = styled.article`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  color: var(--black);
 
   img {
     height: 300px;
@@ -19,10 +20,12 @@ const StyledCard = styled.article`
 
   h4 {
     text-transform: uppercase;
-    color: #521611;
+    color: var(--primary-dark);
   }
 
   h5 {
+    color: var(--grey);
+    font-size: 0.9rem;
   }
 `;
 

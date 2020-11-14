@@ -67,7 +67,7 @@ const initialState = {
       available: 3,
     },
     {
-      id: 6,
+      id: 7,
       name: "'Bushido' - The Seven Virtues of The Samurai",
       style: "Kaisho/Gyosho",
       img: "samurai-journey",
@@ -75,7 +75,7 @@ const initialState = {
       details:
         "Not just one, but 6 calligraphies in one collection - everything for the right Samurai",
       price: 109.99,
-      available: 3,
+      available: 0,
     },
   ],
 };
