@@ -1,3 +1,5 @@
+import device from "./device";
+
 const { default: styled } = require("styled-components");
 
 const StyledFooter = styled.footer`
@@ -7,8 +9,13 @@ const StyledFooter = styled.footer`
   font-size: 0.8rem;
 
   img {
-    width: 2%;
+    width: 7%;
     transform: translateY(40%);
+
+    @media ${device.tabletLandscape} {
+      width: 2%;
+      transform: translateY(40%);
+    }
   }
 `;
 
