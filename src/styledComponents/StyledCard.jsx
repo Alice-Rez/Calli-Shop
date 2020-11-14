@@ -31,7 +31,7 @@ const StyledCard = styled.article`
   .sold-out {
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     transform: rotate(-7deg);
     color: var(--primary);
   }
