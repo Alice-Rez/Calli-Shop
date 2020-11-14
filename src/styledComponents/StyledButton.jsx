@@ -36,12 +36,12 @@ const StyledButton = styled.button`
   ${(props) =>
     props.spinControl &&
     css`
-      width: var(--spin-control-size);
-      height: var(--spin-control-size);
+      width: calc(1.4 * var(--spin-control-size));
+      height: calc(1.4 * var(--spin-control-size));
       margin: var(--space-medium) 0 var(--space-small);
       padding: 0;
       box-shadow: none;
-      font-size: 0.9rem;
+      font-size: 1.15rem;
       font-weight: 900;
       background-color: var(--grey);
       color: var(--white);
@@ -49,6 +49,12 @@ const StyledButton = styled.button`
       :disabled {
         background-color: transparent;
         color: black;
+      }
+
+      @media ${device.tabletLandscape} {
+        width: var(--spin-control-size);
+        height: var(--spin-control-size);
+        font-size: 0.9rem;
       }
     `};
 `;

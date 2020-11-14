@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import device from "./device";
 
 const StyledCard = styled.article`
   max-width: 340px;
@@ -40,7 +41,15 @@ const StyledCard = styled.article`
   }
 
   span {
-    margin-left: var(--space-medium);
+    flex-basis: 100%;
+    @media ${device.tabletLandscape} {
+      margin-left: var(--space-medium);
+      flex-basis: auto;
+    }
+  }
+
+  strong {
+    font-size: 1.15rem;
   }
 `;
 
