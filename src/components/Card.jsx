@@ -74,8 +74,14 @@ export default function Card(props) {
     }
   }, []);
 
-  const addItem = () => {
+  const buyItem = () => {
     dispatch(addItemToOrder(item));
+    if (available > 0) {
+      setItem({ ...item, qty: 1 });
+      dispatch(changeProductStock(item.id, -1));
+    } else {
+      setItem({ ...item, qty: 0 });
+    }
   };
 
   return (
@@ -94,8 +100,8 @@ export default function Card(props) {
             place="card"
           />
         </p>
-        {available ? (
-          <StyledButton primary onClick={addItem}>
+        {item.qty > 0 ? (
+          <StyledButton primary onClick={buyItem}>
             Buy
           </StyledButton>
         ) : (
