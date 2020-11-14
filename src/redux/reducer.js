@@ -13,6 +13,15 @@ const reducer = (state = initialState, action) => {
         ...state,
         products: changedProducts,
       };
+    case "ADD_ITEM":
+      return {
+        ...state,
+        order: {
+          ...state.order,
+          itemsNr: state.order.itemsNr + 1,
+          items: [...state.order.items, action.payload],
+        },
+      };
     default:
       return state;
   }

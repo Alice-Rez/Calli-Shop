@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import StyledCard from "../styledComponents/StyledCard";
 import family from "../assets/images/products/family.svg";
 import harmony from "../assets/images/products/harmony.svg";
@@ -9,6 +9,8 @@ import strongWill from "../assets/images/products/strong-will.svg";
 import samuraiJourney from "../assets/images/products/virtue-of-samurai/samurai-journey.svg";
 import StyledButton from "../styledComponents/StyledButton";
 import SpinControl from "./SpinControl";
+import { useDispatch } from "react-redux";
+import { addItemToOrder, changeProductStock } from "../redux/actions";
 
 export default function Card(props) {
   const {
@@ -21,6 +23,8 @@ export default function Card(props) {
     available,
     alt,
   } = props.product;
+
+  const dispatch = useDispatch();
 
   const [item, setItem] = useState({
     id,
@@ -59,6 +63,21 @@ export default function Card(props) {
 
   chooseImage(img);
 
+  // Because I need at beginning change the stock of the product, because there is already 1 quantity chosen by default
+
+  useEffect(() => {
+    if (available > 0) {
+      dispatch(changeProductStock(item.id, -1));
+    }
+    if (available === 0) {
+      setItem({ ...item, qty: 0 });
+    }
+  }, []);
+
+  const addItem = () => {
+    dispatch(addItemToOrder(item));
+  };
+
   return (
     <StyledCard>
       <img src={image} className="card-img-top" alt={alt} />
@@ -71,7 +90,9 @@ export default function Card(props) {
           <SpinControl item={item} available={available} setQty={setItem} />
         </p>
         {available ? (
-          <StyledButton primary>Buy</StyledButton>
+          <StyledButton primary onClick={addItem}>
+            Buy
+          </StyledButton>
         ) : (
           <p className="sold-out">Sold out</p>
         )}
