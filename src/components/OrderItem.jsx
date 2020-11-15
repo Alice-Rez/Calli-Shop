@@ -15,7 +15,7 @@ export default function OrderItem(props) {
       <td>
         <SpinControl item={item} available={available} place="list" />
       </td>
-      <td>{item.priceSum} &#8364;</td>
+      <td>{item.priceSum.toFixed(2)} &#8364;</td>
     </tr>
   );
 }

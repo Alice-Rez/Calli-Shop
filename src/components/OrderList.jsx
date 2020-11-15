@@ -17,7 +17,7 @@ export default function OrderList() {
         <tr>
           <td colSpan="2"></td>
           <td>Sum</td>
-          <td>{finalPrice} &#8364;</td>
+          <td>{finalPrice.toFixed(2)} &#8364;</td>
         </tr>
       </tfoot>
     </StyledTable>

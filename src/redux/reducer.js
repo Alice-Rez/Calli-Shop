@@ -30,9 +30,6 @@ const reducer = (state = initialState, action) => {
               state.order.priceSumTotal +
               action.payload.value * action.payload.item.price;
           }
-          item.priceSum.toFixed(2);
-          console.log(item.priceSum.toFixed(2));
-          newSum.toFixed(2);
           itemExists = true;
         }
         return item;
