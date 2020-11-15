@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { toggleBasketVisibility } from "../redux/actions";
@@ -11,18 +11,38 @@ export default function Basket() {
   let history = useHistory();
   let dispatch = useDispatch();
 
+  const [page, setPage] = useState("");
+
+  let textLeft, actionLeft, textRight, actionRight;
+
+  const getButtonsSpec = () => {
+    switch (page) {
+      default:
+        textLeft = "back to Shop";
+        actionLeft = goToShop;
+        textRight = "Finish order";
+        actionRight = () => {
+          console.log("order");
+        };
+    }
+  };
+
   const goToShop = () => {
     history.push("/");
     dispatch(toggleBasketVisibility());
   };
+
+  getButtonsSpec();
   return (
     <StyledBasketSection>
       <OrderList />
       <StyledFlex basket>
-        <StyledButton primary onClick={goToShop}>
-          &#8678; back to shop
+        <StyledButton primary onClick={actionLeft}>
+          &#8678; {textLeft}
         </StyledButton>
-        <StyledButton primary>Finish order &#8680;</StyledButton>
+        <StyledButton primary onClick={actionRight}>
+          {textRight} &#8680;
+        </StyledButton>
       </StyledFlex>
     </StyledBasketSection>
   );
