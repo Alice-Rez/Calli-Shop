@@ -16,8 +16,12 @@ const reducer = (state = initialState, action) => {
     case "ADD_ITEM":
       let itemExists = false;
       let changedItems = state.order.items.map((item) => {
-        if (item.id === action.payload.id) {
-          item.qty = item.qty + action.payload.qty;
+        if (item.id === action.payload.item.id) {
+          if (action.payload.value === 0) {
+            item.qty = item.qty + action.payload.item.qty;
+          } else {
+            item.qty = item.qty + action.payload.value;
+          }
           itemExists = true;
         }
         return item;
@@ -28,7 +32,7 @@ const reducer = (state = initialState, action) => {
           order: {
             ...state.order,
             itemsNr: state.order.itemsNr + 1,
-            items: [...state.order.items, action.payload],
+            items: [...state.order.items, action.payload.item],
           },
         };
       } else {

@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { changeProductStock } from "../redux/actions";
+import { addItemToOrder, changeProductStock } from "../redux/actions";
 import StyledButton from "../styledComponents/StyledButton";
 import StyledInput from "../styledComponents/StyledInput";
 
@@ -10,9 +10,11 @@ export default function SpinControl(props) {
   const dispatch = useDispatch();
 
   const increaseQty = () => {
-    if (available > 0) {
+    if (available - item.qty > 0) {
       if (place === "card") {
         setQty({ ...item, qty: item.qty + 1 });
+      } else {
+        dispatch(addItemToOrder(item, 1));
         dispatch(changeProductStock(item.id, -1));
       }
     }
@@ -22,6 +24,8 @@ export default function SpinControl(props) {
     if (item.qty > 1) {
       if (place === "card") {
         setQty({ ...item, qty: item.qty - 1 });
+      } else {
+        dispatch(addItemToOrder(item, -1));
         dispatch(changeProductStock(item.id, 1));
       }
     }
@@ -42,7 +46,7 @@ export default function SpinControl(props) {
       <StyledButton
         spinControl
         id="inc"
-        disabled={available <= 0 ? true : false}
+        disabled={available - item.qty <= 0 ? true : false}
         onClick={increaseQty}
       >
         {" "}

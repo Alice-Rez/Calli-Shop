@@ -8,9 +8,9 @@ export function changeProductStock(id, value) {
   };
 }
 
-export function addItemToOrder(item) {
+export function addItemToOrder(item, value = 0) {
   return {
     type: ADD_ITEM,
-    payload: item,
+    payload: { item, value },
   };
 }

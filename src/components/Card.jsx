@@ -25,6 +25,8 @@ export default function Card(props) {
     alt,
   } = props.product;
 
+  console.log(available);
+
   const dispatch = useDispatch();
 
   const [item, setItem] = useState({
@@ -67,9 +69,6 @@ export default function Card(props) {
   // Because I need at beginning change the stock of the product, because there is already 1 quantity chosen by default
 
   useEffect(() => {
-    if (available > 0) {
-      dispatch(changeProductStock(item.id, -1));
-    }
     if (available === 0) {
       setItem({ ...item, qty: 0 });
     }
@@ -77,9 +76,9 @@ export default function Card(props) {
 
   const buyItem = () => {
     dispatch(addItemToOrder(item));
+    dispatch(changeProductStock(item.id, -item.qty));
     if (available > 0) {
       setItem({ ...item, qty: 1 });
-      dispatch(changeProductStock(item.id, -1));
     } else {
       setItem({ ...item, qty: 0 });
     }
