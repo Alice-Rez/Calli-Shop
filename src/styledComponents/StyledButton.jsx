@@ -38,7 +38,7 @@ const StyledButton = styled.button`
     css`
       width: calc(1.4 * var(--spin-control-size));
       height: calc(1.4 * var(--spin-control-size));
-      margin: var(--space-medium) 0 var(--space-small);
+      margin: var(--space-small) 0 var(--space-small);
       padding: 0;
       box-shadow: none;
       font-size: 1.15rem;

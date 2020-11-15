@@ -50,6 +50,7 @@ const StyledCard = styled.article`
 
   strong {
     font-size: 1.15rem;
+    margin-top: var(--space-medium);
   }
 `;
 
