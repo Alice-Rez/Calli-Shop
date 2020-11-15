@@ -5,6 +5,7 @@ import OrderItem from "./OrderItem";
 
 export default function OrderList() {
   const items = useSelector((state) => state.order.items);
+  const finalPrice = useSelector((state) => state.order.priceSumTotal);
   return (
     <StyledTable>
       <tbody>
@@ -12,6 +13,13 @@ export default function OrderList() {
           return <OrderItem item={item} key={index} />;
         })}
       </tbody>
+      <tfoot>
+        <tr>
+          <td colSpan="2"></td>
+          <td>Sum</td>
+          <td>{finalPrice} &#8364;</td>
+        </tr>
+      </tfoot>
     </StyledTable>
   );
 }
