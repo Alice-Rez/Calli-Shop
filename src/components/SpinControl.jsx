@@ -10,13 +10,11 @@ export default function SpinControl(props) {
   const dispatch = useDispatch();
 
   const increaseQty = () => {
-    if (available - item.qty > 0) {
-      if (place === "card") {
-        setQty({ ...item, qty: item.qty + 1 });
-      } else {
-        dispatch(addItemToOrder(item, 1));
-        dispatch(changeProductStock(item.id, -1));
-      }
+    if (place === "card" && available - item.qty > 0) {
+      setQty({ ...item, qty: item.qty + 1 });
+    } else if (place === "list" && available > 0) {
+      dispatch(addItemToOrder(item, 1));
+      dispatch(changeProductStock(item.id, -1));
     }
   };
 
@@ -46,7 +44,15 @@ export default function SpinControl(props) {
       <StyledButton
         spinControl
         id="inc"
-        disabled={available - item.qty <= 0 ? true : false}
+        disabled={
+          place === "card"
+            ? available - item.qty <= 0
+              ? true
+              : false
+            : available <= 0
+            ? true
+            : false
+        }
         onClick={increaseQty}
       >
         {" "}
