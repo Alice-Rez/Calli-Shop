@@ -1,3 +1,7 @@
+const { createGlobalStyle } = require("styled-components");
+
+const GlobalStyle = createGlobalStyle`
+
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Raleway:wght@200;400;600&display=swap");
 
 :root {
@@ -40,3 +44,6 @@ body {
   padding: 0;
   font-family: var(--text);
 }
+`;
+
+export default GlobalStyle;
