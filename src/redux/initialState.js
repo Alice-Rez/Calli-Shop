@@ -88,6 +88,7 @@ const initialState = {
       available: 0,
     },
   ],
+  isInBasket: false,
 };
 
 export default initialState;

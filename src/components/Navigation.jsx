@@ -2,33 +2,36 @@ import React, { useState } from "react";
 import StyledNav from "../styledComponents/StyledNavbar";
 import basket from "../assets/images/basket.svg";
 import StyledLink from "../styledComponents/StyledLink";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleBasketVisibility } from "../redux/actions";
 
 export default function Navigation() {
   const itemsNr = useSelector((state) => state.order.itemsNr);
+  const isInBasket = useSelector((state) => state.isInBasket);
+  const dispatch = useDispatch();
 
   const [basketVisible, setBasketVisible] = useState(false);
 
   return (
     <StyledNav>
-      {!basketVisible ? (
+      {isInBasket ? (
+        <StyledLink
+          to="/"
+          onClick={() => {
+            dispatch(toggleBasketVisibility());
+          }}
+        >
+          Back to shop
+        </StyledLink>
+      ) : (
         <StyledLink
           to="/basket"
           onClick={() => {
-            setBasketVisible(true);
+            dispatch(toggleBasketVisibility());
           }}
         >
           <span>{itemsNr}</span>
           <img src={basket} alt="basket icon" />
-        </StyledLink>
-      ) : (
-        <StyledLink
-          to="/"
-          onClick={() => {
-            setBasketVisible(false);
-          }}
-        >
-          Back to shop
         </StyledLink>
       )}
     </StyledNav>

@@ -2,6 +2,11 @@ import initialState from "./initialState";
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case "BASKET_TOGGLE":
+      return {
+        ...state,
+        isInBasket: !state.isInBasket,
+      };
     case "CHANGE_STOCK":
       let changedProducts = state.products.map((product) => {
         if (product.id === action.payload.id) {
