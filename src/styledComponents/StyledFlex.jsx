@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import device from "./device";
 
 const StyledFlex = styled.div`
   display: flex;
@@ -7,16 +8,14 @@ const StyledFlex = styled.div`
   align-items: baseline;
 
   ${(props) =>
-    props.spaceBetween &&
-    css`
-      justify-content: space-between;
-    `}
-
-  ${(props) =>
     props.basket &&
     css`
       width: 100%;
       max-width: var(--basket-content-width);
+
+      @media ${device.tabletPortrait} {
+        justify-content: space-between;
+      }
     `}
 `;
 

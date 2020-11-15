@@ -4,6 +4,7 @@ const StyledMain = styled.main`
   grid-area: main;
   text-align: center;
   padding: var(--space-medium);
+  /* min-height: 90vh; */
 
   h3 {
     text-transform: uppercase;
