@@ -1,5 +1,10 @@
 import React from "react";
+import OrderList from "./OrderList";
 
 export default function Basket() {
-  return <section>Here will be basket - everything for order</section>;
+  return (
+    <section>
+      <OrderList />
+    </section>
+  );
 }

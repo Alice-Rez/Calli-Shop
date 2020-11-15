@@ -10,8 +10,8 @@ export default function SpinControl(props) {
   const dispatch = useDispatch();
 
   const increaseQty = () => {
-    if (place === "card") {
-      if (available > 0) {
+    if (available > 0) {
+      if (place === "card") {
         setQty({ ...item, qty: item.qty + 1 });
         dispatch(changeProductStock(item.id, -1));
       }
@@ -19,8 +19,8 @@ export default function SpinControl(props) {
   };
 
   const decreaseQty = () => {
-    if (place === "card") {
-      if (item.qty > 1) {
+    if (item.qty > 1) {
+      if (place === "card") {
         setQty({ ...item, qty: item.qty - 1 });
         dispatch(changeProductStock(item.id, 1));
       }
