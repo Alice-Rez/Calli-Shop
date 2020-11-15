@@ -11,7 +11,7 @@ export default function Basket() {
   let history = useHistory();
   let dispatch = useDispatch();
 
-  const [page, setPage] = useState("");
+  const [page, setPage] = useState("basket");
 
   let textLeft, actionLeft, textRight, actionRight;
 
@@ -35,7 +35,7 @@ export default function Basket() {
   getButtonsSpec();
   return (
     <StyledBasketSection>
-      <OrderList />
+      {page === "basket" ? <OrderList /> : null}
       <StyledFlex basket>
         <StyledButton primary onClick={actionLeft}>
           &#8678; {textLeft}
