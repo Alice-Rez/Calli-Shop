@@ -25,7 +25,7 @@ export default function Card(props) {
     alt,
   } = props.product;
 
-  console.log(available);
+  console.log(name, available);
 
   const dispatch = useDispatch();
 
@@ -72,7 +72,7 @@ export default function Card(props) {
     if (available === 0) {
       setItem({ ...item, qty: 0 });
     }
-  }, []);
+  }, [available]);
 
   const buyItem = () => {
     dispatch(addItemToOrder(item));
