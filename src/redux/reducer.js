@@ -20,13 +20,19 @@ const reducer = (state = initialState, action) => {
         if (item.id === action.payload.item.id) {
           if (action.payload.value === 0) {
             item.qty = item.qty + action.payload.item.qty;
+            item.priceSum = item.priceSum + action.payload.item.priceSum;
             newSum = state.order.priceSumTotal + action.payload.item.priceSum;
           } else {
             item.qty = item.qty + action.payload.value;
+            item.priceSum =
+              item.priceSum + action.payload.value * action.payload.item.price;
             newSum =
               state.order.priceSumTotal +
               action.payload.value * action.payload.item.price;
           }
+          item.priceSum.toFixed(2);
+          console.log(item.priceSum.toFixed(2));
+          newSum.toFixed(2);
           itemExists = true;
         }
         return item;
