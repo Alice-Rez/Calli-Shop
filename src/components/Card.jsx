@@ -65,6 +65,8 @@ export default function Card(props) {
 
   chooseImage(img);
 
+  // the order of useEffects is important, if I wrote it differently, it would be able to click on item that is no more available
+
   useEffect(() => {
     let priceSum = item.price * item.qty;
     setItem({ ...item, priceSum: +priceSum.toFixed(2) });
