@@ -32,6 +32,7 @@ export default function Card(props) {
     name,
     price,
     qty: 1,
+    priceSum: price,
   });
 
   let image;
@@ -64,7 +65,10 @@ export default function Card(props) {
 
   chooseImage(img);
 
-  // Because I need at beginning change the stock of the product, because there is already 1 quantity chosen by default
+  useEffect(() => {
+    let priceSum = item.price * item.qty;
+    setItem({ ...item, priceSum: +priceSum.toFixed(2) });
+  }, [item.qty]);
 
   useEffect(() => {
     if (available === 0) {

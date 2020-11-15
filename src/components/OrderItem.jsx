@@ -11,10 +11,11 @@ export default function OrderItem(props) {
   return (
     <tr>
       <td>{item.name}</td>
-      <td>{item.price} </td>
+      <td>{item.price} &#8364;</td>
       <td>
         <SpinControl item={item} available={available} place="list" />
       </td>
+      <td>{item.priceSum} &#8364;</td>
     </tr>
   );
 }
