@@ -1,6 +1,7 @@
 const initialState = {
   order: {
     itemsNr: 0,
+    priceSumTotal: 0,
     items: [],
     customer: {
       personal: {},
@@ -38,7 +39,7 @@ const initialState = {
       img: "love",
       alt: "Love written by Japanese Calligraphy",
       details:
-        "Give love instead of generic wedding congratulations. Complete it with customized names. ",
+        "Give love instead of generic wedding congratulations. Complete it with customized names of recipients. ",
       price: 34.99,
       available: 10,
     },

@@ -15,12 +15,17 @@ const reducer = (state = initialState, action) => {
       };
     case "ADD_ITEM":
       let itemExists = false;
+      let newSum;
       let changedItems = state.order.items.map((item) => {
         if (item.id === action.payload.item.id) {
           if (action.payload.value === 0) {
             item.qty = item.qty + action.payload.item.qty;
+            newSum = state.order.priceSumTotal + action.payload.item.priceSum;
           } else {
             item.qty = item.qty + action.payload.value;
+            newSum =
+              state.order.priceSumTotal +
+              action.payload.value * action.payload.item.price;
           }
           itemExists = true;
         }
@@ -32,13 +37,15 @@ const reducer = (state = initialState, action) => {
           order: {
             ...state.order,
             itemsNr: state.order.itemsNr + 1,
+            priceSumTotal:
+              state.order.priceSumTotal + action.payload.item.priceSum,
             items: [...state.order.items, action.payload.item],
           },
         };
       } else {
         return {
           ...state,
-          order: { ...state.order, items: changedItems },
+          order: { ...state.order, priceSumTotal: newSum, items: changedItems },
         };
       }
     default:
