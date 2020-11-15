@@ -9,8 +9,8 @@ export default function Basket() {
     <StyledBasketSection>
       <OrderList />
       <StyledFlex spaceBetween basket>
-        <StyledButton primary>⬅ back to shop</StyledButton>
-        <StyledButton primary>Finish order &#11157;</StyledButton>
+        <StyledButton primary>&#8678; back to shop</StyledButton>
+        <StyledButton primary>Finish order &#8680;</StyledButton>
       </StyledFlex>
     </StyledBasketSection>
   );
