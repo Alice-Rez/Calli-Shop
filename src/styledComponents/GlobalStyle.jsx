@@ -26,6 +26,8 @@ const GlobalStyle = createGlobalStyle`
     -3px -3px 7px rgba(255, 255, 255, 0.3);
 
   --spin-control-size: 25px;
+
+  --basket-content-width: 600px;
 }
 
 html {
