@@ -25,8 +25,6 @@ export default function Card(props) {
     alt,
   } = props.product;
 
-  console.log(name, available);
-
   const dispatch = useDispatch();
 
   const [item, setItem] = useState({
