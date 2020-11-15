@@ -49,6 +49,7 @@ const StyledButton = styled.button`
       :disabled {
         background-color: transparent;
         color: black;
+        border: solid 1px var(--black);
       }
 
       @media ${device.tabletLandscape} {
