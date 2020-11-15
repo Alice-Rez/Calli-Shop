@@ -28,7 +28,7 @@ export default function Navigation() {
             setBasketVisible(false);
           }}
         >
-          Products
+          Back to shop
         </StyledLink>
       )}
     </StyledNav>

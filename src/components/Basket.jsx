@@ -1,10 +1,11 @@
 import React from "react";
+import StyledBasketSection from "../styledComponents/StyledBasketSection";
 import OrderList from "./OrderList";
 
 export default function Basket() {
   return (
-    <section>
+    <StyledBasketSection>
       <OrderList />
-    </section>
+    </StyledBasketSection>
   );
 }
