@@ -10,8 +10,6 @@ export default function Navigation() {
   const isInBasket = useSelector((state) => state.isInBasket);
   const dispatch = useDispatch();
 
-  const [basketVisible, setBasketVisible] = useState(false);
-
   return (
     <StyledNav>
       {isInBasket ? (
