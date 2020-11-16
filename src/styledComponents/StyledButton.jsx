@@ -22,6 +22,18 @@ const StyledButton = styled.button`
     `}
 
   ${(props) =>
+    props.primary &&
+    css`
+      background-color: var(--primary);
+      color: var(--white);
+
+      :hover {
+        background-color: var(--white);
+        color: var(--primary);
+      }
+    `};
+
+  ${(props) =>
     props.spinControl &&
     css`
       width: calc(1.4 * var(--spin-control-size));
@@ -48,15 +60,11 @@ const StyledButton = styled.button`
     `};
 
   ${(props) =>
-    props.primary &&
+    props.primaryReverse &&
     css`
-      background-color: var(--primary);
-      color: var(--white);
-
-      :hover {
-        background-color: var(--white);
-        color: var(--primary);
-      }
+      background-color: transparent;
+      color: var(--primary);
+      border: solid 1px var(--primary);
     `};
 `;
 

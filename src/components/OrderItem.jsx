@@ -18,8 +18,8 @@ export default function OrderItem(props) {
       </td>
       <td>{item.priceSum.toFixed(2)} &#8364;</td>
       <td>
-        <StyledButton spinControl primary>
-          X
+        <StyledButton spinControl primaryReverse>
+          &#10005;
         </StyledButton>
       </td>
     </tr>
