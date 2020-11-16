@@ -64,7 +64,6 @@ const StyledButton = styled.button`
     css`
       background-color: transparent;
       color: var(--primary);
-      border: solid 1px var(--primary);
     `};
 `;
 
