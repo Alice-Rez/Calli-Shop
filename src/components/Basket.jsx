@@ -5,6 +5,7 @@ import { toggleBasketVisibility } from "../redux/actions";
 import StyledBasketSection from "../styledComponents/StyledBasketSection";
 import StyledButton from "../styledComponents/StyledButton";
 import StyledFlex from "../styledComponents/StyledFlex";
+import OrderDetails from "./OrderDetails";
 import OrderList from "./OrderList";
 
 export default function Basket() {
@@ -35,7 +36,12 @@ export default function Basket() {
   getButtonsSpec();
   return (
     <StyledBasketSection>
-      {page === "basket" ? <OrderList /> : null}
+      {page === "basket" ? (
+        <React.Fragment>
+          <OrderList />
+          <OrderDetails />
+        </React.Fragment>
+      ) : null}
       <StyledFlex basket>
         <StyledButton primary onClick={actionLeft}>
           &#8678; {textLeft}

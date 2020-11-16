@@ -45,12 +45,12 @@ const initialState = {
     },
     {
       id: 4,
-      name: "Customized names",
+      name: "Customized name",
       style: "Katakana",
       img: "names",
       alt: "Custom names written by Japanese Calligraphy",
       details:
-        "Be original and give your  friends their names written in japanese. Like here in example for Alice and Richard.",
+        "Be original and give your friends their name written in japanese. Like here in example for Alice and Richard.",
       price: 40.99,
       available: 30,
     },
