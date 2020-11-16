@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { toggleBasketVisibility } from "../redux/actions";
 import StyledSection from "../styledComponents/StyledSection";
@@ -11,6 +11,9 @@ import OrderList from "./OrderList";
 export default function Basket() {
   let history = useHistory();
   let dispatch = useDispatch();
+
+  const items = useSelector((state) => state.order.items);
+  const [customNamesProd, setCustomNamesProd] = useState(false);
 
   const [page, setPage] = useState("basket");
 
@@ -34,12 +37,27 @@ export default function Basket() {
   };
 
   getButtonsSpec();
+
+  useEffect(() => {
+    let customizedNameItemExist = false;
+    items.map((item) => {
+      if (item.name === "Customized name") {
+        setCustomNamesProd(true);
+        customizedNameItemExist = true;
+      }
+      return null;
+    });
+    if (!customizedNameItemExist) {
+      setCustomNamesProd(false);
+    }
+  }, [items]);
+
   return (
     <StyledSection basket>
       {page === "basket" ? (
         <React.Fragment>
           <OrderList />
-          <OrderDetails />
+          {customNamesProd ? <OrderDetails /> : null}
         </React.Fragment>
       ) : null}
       <StyledFlex basket>
