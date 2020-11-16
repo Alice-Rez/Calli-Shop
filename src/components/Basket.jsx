@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { toggleBasketVisibility } from "../redux/actions";
-import StyledBasketSection from "../styledComponents/StyledBasketSection";
+import StyledSection from "../styledComponents/StyledSection";
 import StyledButton from "../styledComponents/StyledButton";
 import StyledFlex from "../styledComponents/StyledFlex";
 import OrderDetails from "./OrderDetails";
@@ -35,7 +35,7 @@ export default function Basket() {
 
   getButtonsSpec();
   return (
-    <StyledBasketSection>
+    <StyledSection basket>
       {page === "basket" ? (
         <React.Fragment>
           <OrderList />
@@ -50,6 +50,6 @@ export default function Basket() {
           {textRight} &#8680;
         </StyledButton>
       </StyledFlex>
-    </StyledBasketSection>
+    </StyledSection>
   );
 }

@@ -6,6 +6,14 @@ const StyledInput = styled.input`
   border: none;
 
   ${(props) =>
+    !props.spinControl &&
+    css`
+      padding: var(--space-small);
+      box-shadow: var(--shadow-small-darker);
+      margin: auto var(--space-small);
+    `}
+
+  ${(props) =>
     props.spinControl &&
     css`
       width: 40px;
@@ -13,14 +21,13 @@ const StyledInput = styled.input`
       text-align: center;
       font-size: 1.1rem;
       font-weight: 900;
-
       @media ${device.tabletLandscape} {
         width: 30px;
         width: var(--spin-control-size);
         height: var(--spin-control-size);
         font-size: 0.9rem;
       }
-    `}
+    `};
 `;
 
 export default StyledInput;
