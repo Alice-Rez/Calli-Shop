@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import StyledNav from "../styledComponents/StyledNavbar";
 import basket from "../assets/images/basket.svg";
 import StyledLink from "../styledComponents/StyledLink";

@@ -7,6 +7,11 @@ const StyledSelect = styled.select`
   padding: var(--space-small);
   background-color: white;
   border: none;
+  width: 150px;
+
+  option {
+    padding: var(--space-small);
+  }
 `;
 
 export default StyledSelect;
