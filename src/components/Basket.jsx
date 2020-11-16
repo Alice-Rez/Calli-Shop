@@ -20,7 +20,7 @@ export default function Basket() {
       default:
         textLeft = "back to Shop";
         actionLeft = goToShop;
-        textRight = "Finish order";
+        textRight = "go to order";
         actionRight = () => {
           console.log("order");
         };
