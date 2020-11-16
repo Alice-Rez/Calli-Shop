@@ -40,7 +40,13 @@ export default function SpinControl(props) {
         {" "}
         -{" "}
       </StyledButton>
-      <StyledInput type="text" name="number" value={item.qty} readOnly />
+      <StyledInput
+        type="text"
+        name="number"
+        value={item.qty}
+        readOnly
+        spinControl
+      />
       <StyledButton
         spinControl
         id="inc"
