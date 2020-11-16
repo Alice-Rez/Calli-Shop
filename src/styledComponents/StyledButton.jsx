@@ -22,18 +22,6 @@ const StyledButton = styled.button`
     `}
 
   ${(props) =>
-    props.primary &&
-    css`
-      background-color: var(--primary);
-      color: var(--white);
-
-      :hover {
-        background-color: var(--white);
-        color: var(--primary);
-      }
-    `};
-
-  ${(props) =>
     props.spinControl &&
     css`
       width: calc(1.4 * var(--spin-control-size));
@@ -56,6 +44,18 @@ const StyledButton = styled.button`
         width: var(--spin-control-size);
         height: var(--spin-control-size);
         font-size: 0.9rem;
+      }
+    `};
+
+  ${(props) =>
+    props.primary &&
+    css`
+      background-color: var(--primary);
+      color: var(--white);
+
+      :hover {
+        background-color: var(--white);
+        color: var(--primary);
       }
     `};
 `;

@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import StyledButton from "../styledComponents/StyledButton";
 import SpinControl from "./SpinControl";
 
 export default function OrderItem(props) {
@@ -16,6 +17,11 @@ export default function OrderItem(props) {
         <SpinControl item={item} available={available} place="list" />
       </td>
       <td>{item.priceSum.toFixed(2)} &#8364;</td>
+      <td>
+        <StyledButton spinControl primary>
+          X
+        </StyledButton>
+      </td>
     </tr>
   );
 }
