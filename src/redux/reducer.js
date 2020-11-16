@@ -69,7 +69,12 @@ const reducer = (state = initialState, action) => {
       );
       return {
         ...state,
-        order: { ...state.order, priceSumTotal: newSum, items: changedItems },
+        order: {
+          ...state.order,
+          itemsNr: state.order.itemsNr - 1,
+          priceSumTotal: newSum,
+          items: changedItems,
+        },
       };
 
     default:
