@@ -13,12 +13,13 @@ export default function OrderDetails() {
   const [namesQty, setNamesQty] = useState(0);
   const [customQtyArray, setCustomQtyArray] = useState([]);
 
-  // useEffect(() => {
-  //   console.log(namesQty);
-  //   for (let i = 1; +namesQty; i++) {
-  //     setCustomQtyArray([...customQtyArray, i]);
-  //   }
-  // }, [namesQty]);
+  useEffect(() => {
+    setCustomQtyArray([]);
+    for (let i = 1; i <= +namesQty; i++) {
+      console.log(namesQty);
+      setCustomQtyArray([...customQtyArray, i]);
+    }
+  }, [namesQty]);
 
   useEffect(() => {
     let familyItemExist = false;
@@ -58,8 +59,8 @@ export default function OrderDetails() {
         information
       </p>
       <p>- which name(s) and where you want to have written:</p>
-      {customQtyArray.map((item) => (
-        <React.Fragment>
+      {customQtyArray.map((item, index) => (
+        <div key={index}>
           <label htmlFor="names">Name {item} </label>
           <StyledInput type="text" id={`name${item}`} name={`name${item}`} />
           <label htmlFor="location1">Location {item}</label>
@@ -71,7 +72,7 @@ export default function OrderDetails() {
               <option value="strong-will">Strong will-Kakizome</option>
             ) : null}
           </StyledSelect>
-        </React.Fragment>
+        </div>
       ))}
     </StyledSection>
   );
