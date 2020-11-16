@@ -60,7 +60,7 @@ export default function OrderDetails() {
       </p>
       <p>- which name(s) and where you want to have written:</p>
       {customQtyArray.map((item, index) => (
-        <div key={index}>
+        <StyledSection key={index} detailsRow>
           <label htmlFor="names">Name {item} </label>
           <StyledInput type="text" id={`name${item}`} name={`name${item}`} />
           <label htmlFor="location1">Location {item}</label>
@@ -72,7 +72,7 @@ export default function OrderDetails() {
               <option value="strong-will">Strong will-Kakizome</option>
             ) : null}
           </StyledSelect>
-        </div>
+        </StyledSection>
       ))}
     </StyledSection>
   );
