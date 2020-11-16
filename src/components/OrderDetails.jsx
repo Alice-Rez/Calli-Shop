@@ -14,14 +14,6 @@ export default function OrderDetails() {
   const [customQtyArray, setCustomQtyArray] = useState([]);
 
   useEffect(() => {
-    setCustomQtyArray([]);
-    for (let i = 1; i <= +namesQty; i++) {
-      console.log(namesQty);
-      setCustomQtyArray([...customQtyArray, i]);
-    }
-  }, [namesQty]);
-
-  useEffect(() => {
     let familyItemExist = false;
     let loveItemExist = false;
     let strongWillItemExist = false;
@@ -51,6 +43,13 @@ export default function OrderDetails() {
       setStrongWillProd(false);
     }
   }, [items]);
+
+  useEffect(() => {
+    setCustomQtyArray([]);
+    for (let i = 1; i <= +namesQty; i++) {
+      setCustomQtyArray([...customQtyArray, i]);
+    }
+  }, [namesQty]);
 
   return (
     <StyledSection orderDetails>
