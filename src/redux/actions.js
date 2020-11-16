@@ -1,6 +1,7 @@
 const BASKET_TOGGLE = "BASKET_TOGGLE";
 const CHANGE_STOCK = "CHANGE_STOCK";
 const ADD_ITEM = "ADD_ITEM";
+const DELETE_ITEM = "DELETE_ITEM";
 
 export function toggleBasketVisibility() {
   return {
@@ -19,5 +20,12 @@ export function addItemToOrder(item, value = 0) {
   return {
     type: ADD_ITEM,
     payload: { item, value },
+  };
+}
+
+export function deleteItem(id) {
+  return {
+    type: DELETE_ITEM,
+    payload: id,
   };
 }

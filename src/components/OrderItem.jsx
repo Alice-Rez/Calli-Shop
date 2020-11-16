@@ -1,5 +1,6 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteItem } from "../redux/actions";
 import StyledButton from "../styledComponents/StyledButton";
 import SpinControl from "./SpinControl";
 
@@ -8,6 +9,7 @@ export default function OrderItem(props) {
   const available = useSelector(
     (state) => state.products[item.id - 1].available
   );
+  const dispatch = useDispatch();
 
   return (
     <tr>
@@ -18,7 +20,13 @@ export default function OrderItem(props) {
       </td>
       <td>{item.priceSum.toFixed(2)} &#8364;</td>
       <td>
-        <StyledButton spinControl primaryReverse>
+        <StyledButton
+          spinControl
+          primaryReverse
+          onClick={() => {
+            dispatch(deleteItem(item.id));
+          }}
+        >
           &#10005;
         </StyledButton>
       </td>

@@ -1,6 +1,8 @@
 import initialState from "./initialState";
 
 const reducer = (state = initialState, action) => {
+  let newSum;
+  let changedItems;
   switch (action.type) {
     case "BASKET_TOGGLE":
       return {
@@ -20,8 +22,7 @@ const reducer = (state = initialState, action) => {
       };
     case "ADD_ITEM":
       let itemExists = false;
-      let newSum;
-      let changedItems = state.order.items.map((item) => {
+      changedItems = state.order.items.map((item) => {
         if (item.id === action.payload.item.id) {
           if (action.payload.value === 0) {
             item.qty = item.qty + action.payload.item.qty;
@@ -56,6 +57,21 @@ const reducer = (state = initialState, action) => {
           order: { ...state.order, priceSumTotal: newSum, items: changedItems },
         };
       }
+    case "DELETE_ITEM":
+      state.order.items.map((item) => {
+        if (item.id === action.payload) {
+          newSum = state.order.priceSumTotal - item.priceSum;
+        }
+        return item;
+      });
+      changedItems = state.order.items.filter(
+        (item) => item.id !== action.payload
+      );
+      return {
+        ...state,
+        order: { ...state.order, priceSumTotal: newSum, items: changedItems },
+      };
+
     default:
       return state;
   }
