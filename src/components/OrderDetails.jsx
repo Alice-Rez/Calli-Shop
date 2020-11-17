@@ -44,11 +44,24 @@ export default function OrderDetails() {
     }
   }, [items]);
 
-  useEffect(() => {
+  const nullArray = () => {
     setCustomQtyArray([]);
-    for (let i = 1; i <= +namesQty; i++) {
-      setCustomQtyArray([...customQtyArray, i]);
+  };
+
+  useEffect(() => {
+    let helper = [];
+    // nullArray();
+    console.log("before for loop:", customQtyArray, namesQty);
+    for (let i = 1; i <= namesQty; i++) {
+      console.log("in the loop:", customQtyArray, namesQty);
+      // setCustomQtyArray([...customQtyArray, i]);
+      helper.push(i);
     }
+    console.log("after for loop:", customQtyArray, namesQty);
+    setCustomQtyArray(helper);
+    // return () => {
+    //   setCustomQtyArray([]);
+    // };
   }, [namesQty]);
 
   return (
