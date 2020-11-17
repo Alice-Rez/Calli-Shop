@@ -3,11 +3,10 @@ const initialState = {
     itemsNr: 0,
     priceSumTotal: 0,
     items: [],
-    customer: {
-      personal: {},
-      delivery: "",
-      payment: "",
-    },
+    details: {},
+    customer: {},
+    delivery: "",
+    payment: "",
   },
   products: [
     {

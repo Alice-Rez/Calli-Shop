@@ -76,7 +76,17 @@ const reducer = (state = initialState, action) => {
           items: changedItems,
         },
       };
-
+    case "ADD_ORDER_DETAILS":
+      return {
+        ...state,
+        order: {
+          ...state.order,
+          details: {
+            ...state.order.details,
+            [action.payload.key]: action.payload.value,
+          },
+        },
+      };
     default:
       return state;
   }
