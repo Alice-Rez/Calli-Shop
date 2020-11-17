@@ -44,13 +44,15 @@ export default function OrderDetails() {
     }
   }, [items]);
 
-  const nullArray = () => {
-    setCustomQtyArray([]);
-  };
+  // const nullArray = () => {
+  //   setCustomQtyArray([]);
+  // };
 
   useEffect(() => {
     let helper = [];
     // nullArray();
+    // setCustomQtyArray(null);
+    // setCustomQtyArray([]);
     console.log("before for loop:", customQtyArray, namesQty);
     for (let i = 1; i <= namesQty; i++) {
       console.log("in the loop:", customQtyArray, namesQty);
