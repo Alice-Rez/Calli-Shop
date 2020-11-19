@@ -16,6 +16,9 @@ export default function OrderDetails() {
   const [namesQty, setNamesQty] = useState(0);
   const [customQtyArray, setCustomQtyArray] = useState([]);
 
+  // this state variable is here just to make inpput controlled in the React sense of its value coming from state..... otherwise it throw error
+  const [names] = useState(details);
+
   useEffect(() => {
     let familyItemExist = false;
     let loveItemExist = false;
@@ -83,7 +86,7 @@ export default function OrderDetails() {
             type="text"
             id={`name${item}`}
             name={`name${item}`}
-            value={details[`name${item}`]}
+            value={names[`name${item}`]}
             onChange={(e) => {
               dispatch(addOrderDetails(e.target.name, e.target.value));
             }}
