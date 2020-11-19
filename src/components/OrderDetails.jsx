@@ -97,10 +97,29 @@ export default function OrderDetails() {
             }}
           >
             <option value="standalone">Standalone</option>
-            {familyProd ? <option value="family">Family</option> : null}
-            {loveProd ? <option value="love">Love</option> : null}
+            {familyProd ? (
+              <option
+                value="family"
+                selected={details[`location${item}`] === "family"}
+              >
+                Family
+              </option>
+            ) : null}
+            {loveProd ? (
+              <option
+                value="love"
+                selected={details[`location${item}`] === "love"}
+              >
+                Love
+              </option>
+            ) : null}
             {strongWillProd ? (
-              <option value="strong-will">Strong will-Kakizome</option>
+              <option
+                value="strong-will"
+                selected={details[`location${item}`] === "strong-will"}
+              >
+                Strong will-Kakizome
+              </option>
             ) : null}
           </StyledSelect>
         </StyledSection>
