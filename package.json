@@ -1,5 +1,6 @@
 {
-  "name": "eshop",
+  "name": "calli-shop",
+  "author":"Alice Rez",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
