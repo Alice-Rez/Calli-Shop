@@ -28,6 +28,8 @@ const GlobalStyle = createGlobalStyle`
   --spin-control-size: 25px;
 
   --basket-content-width: 600px;
+
+  --details-input-size:180px;
 }
 
 html {

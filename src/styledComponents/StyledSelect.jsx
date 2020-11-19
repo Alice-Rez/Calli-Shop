@@ -7,7 +7,7 @@ const StyledSelect = styled.select`
   padding: var(--space-small);
   background-color: white;
   border: none;
-  width: 150px;
+  width: var(--details-input-size);
 
   option {
     padding: var(--space-small);

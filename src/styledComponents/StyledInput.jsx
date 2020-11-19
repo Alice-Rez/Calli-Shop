@@ -8,7 +8,7 @@ const StyledInput = styled.input`
   ${(props) =>
     !props.spinControl &&
     css`
-      width: 150px;
+      width: var(--details-input-size);
       padding: var(--space-small);
       box-shadow: var(--shadow-small-darker);
       margin: auto var(--space-small);
