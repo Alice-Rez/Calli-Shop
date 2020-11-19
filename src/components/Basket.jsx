@@ -61,10 +61,10 @@ export default function Basket() {
         </React.Fragment>
       ) : null}
       <StyledFlex basket>
-        <StyledButton primary onClick={actionLeft}>
+        <StyledButton primary basketMain onClick={actionLeft}>
           &#8678; {textLeft}
         </StyledButton>
-        <StyledButton primary onClick={actionRight}>
+        <StyledButton primary basketMain onClick={actionRight}>
           {textRight} &#8680;
         </StyledButton>
       </StyledFlex>

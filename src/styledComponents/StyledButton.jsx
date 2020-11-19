@@ -65,6 +65,12 @@ const StyledButton = styled.button`
       background-color: transparent;
       color: var(--primary);
     `};
+
+  ${(props) =>
+    props.basketMain &&
+    css`
+      width: 180px;
+    `}
 `;
 
 export default StyledButton;
