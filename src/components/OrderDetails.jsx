@@ -92,34 +92,17 @@ export default function OrderDetails() {
           <StyledSelect
             name={`location${item}`}
             id={`name${item}`}
+            defaultValue={details[`location${item}`] || ""}
             onChange={(e) => {
               dispatch(addOrderDetails(e.target.name, e.target.value));
             }}
           >
+            <option value="">--- Choose one ---</option>
             <option value="standalone">Standalone</option>
-            {familyProd ? (
-              <option
-                value="family"
-                selected={details[`location${item}`] === "family"}
-              >
-                Family
-              </option>
-            ) : null}
-            {loveProd ? (
-              <option
-                value="love"
-                selected={details[`location${item}`] === "love"}
-              >
-                Love
-              </option>
-            ) : null}
+            {familyProd ? <option value="family">Family</option> : null}
+            {loveProd ? <option value="love">Love</option> : null}
             {strongWillProd ? (
-              <option
-                value="strong-will"
-                selected={details[`location${item}`] === "strong-will"}
-              >
-                Strong will-Kakizome
-              </option>
+              <option value="strong-will">Strong will-Kakizome</option>
             ) : null}
           </StyledSelect>
         </StyledSection>
