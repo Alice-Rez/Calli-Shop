@@ -18,11 +18,14 @@ const StyledTable = styled.table`
   }
 
   @media (max-width: 768px) {
+    margin-top: var(--space-medium);
+
     tr {
       display: grid;
       grid-template-areas: "title title delete" "price qty sum";
       grid-template-columns: auto 1fr auto;
       align-items: center;
+      margin-top: var(--space-small);
 
       td:first-of-type {
         grid-area: title;
@@ -34,10 +37,31 @@ const StyledTable = styled.table`
     }
 
     tfoot tr {
-      grid-template-areas: "label label" "sum sum";
+      grid-template-areas: "label label" "sumTotal sumTotal";
       border-top: solid 1px var(--black);
 
       td:nth-of-type(3) {
+        justify-self: right;
+      }
+    }
+  }
+
+  @media (max-width: 370px) {
+    tbody tr {
+      grid-template-areas: "title delete" "price price" "qty qty" "sum sum";
+      grid-template-columns: 1fr auto;
+
+      td:nth-of-type(2) {
+        grid-area: price;
+        justify-self: right;
+      }
+
+      td:nth-of-type(3) {
+        grid-area: qty;
+        justify-self: right;
+      }
+      td:nth-of-type(4) {
+        grid-area: sum;
         justify-self: right;
       }
     }
