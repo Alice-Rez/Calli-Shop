@@ -8,7 +8,6 @@ import StyledFlex from "../styledComponents/StyledFlex";
 import OrderDetails from "./OrderDetails";
 import OrderList from "./OrderList";
 import OrderStepper from "./OrderStepper";
-import StyledFigure from "../styledComponents/StyledFigure";
 
 export default function Basket() {
   let history = useHistory();
@@ -66,11 +65,7 @@ export default function Basket() {
           {customNamesProd ? <OrderDetails /> : null}
         </React.Fragment>
       ) : null}
-      {page !== "basket" ? (
-        <StyledFigure stepper>
-          <OrderStepper />
-        </StyledFigure>
-      ) : null}
+      {page !== "basket" ? <OrderStepper /> : null}
       <StyledFlex basket>
         <StyledButton primary basketMain onClick={actionLeft}>
           &#8678; {textLeft}

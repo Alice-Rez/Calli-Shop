@@ -24,16 +24,12 @@ const StyledFigure = styled.figure`
 
       [class^="number"],
       [class^="text"] {
-        line-height: 1.25px;
+        line-height: 1.25rem;
       }
 
       [class^="text"] tspan {
         text-align: center;
-        font-size: 8px;
-      }
-
-      .hidden {
-        display: none;
+        font-size: 9px;
       }
     `}
 `;
