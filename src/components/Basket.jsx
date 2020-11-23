@@ -7,6 +7,8 @@ import StyledButton from "../styledComponents/StyledButton";
 import StyledFlex from "../styledComponents/StyledFlex";
 import OrderDetails from "./OrderDetails";
 import OrderList from "./OrderList";
+import OrderStepper from "./OrderStepper";
+import StyledFigure from "../styledComponents/StyledFigure";
 
 export default function Basket() {
   let history = useHistory();
@@ -26,7 +28,7 @@ export default function Basket() {
         actionLeft = goToShop;
         textRight = "go to order";
         actionRight = () => {
-          console.log("order");
+          changePage(1);
         };
     }
   };
@@ -34,6 +36,10 @@ export default function Basket() {
   const goToShop = () => {
     history.push("/");
     dispatch(toggleBasketVisibility());
+  };
+
+  const changePage = (value) => {
+    setPage(value);
   };
 
   getButtonsSpec();
@@ -59,6 +65,11 @@ export default function Basket() {
           <OrderList />
           {customNamesProd ? <OrderDetails /> : null}
         </React.Fragment>
+      ) : null}
+      {page !== "basket" ? (
+        <StyledFigure stepper>
+          <OrderStepper />
+        </StyledFigure>
       ) : null}
       <StyledFlex basket>
         <StyledButton primary basketMain onClick={actionLeft}>

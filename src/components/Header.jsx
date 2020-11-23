@@ -10,7 +10,7 @@ export default function Header() {
     <StyledHeader>
       <h1>Calli-SHOP</h1>
 
-      <StyledFigure>
+      <StyledFigure header>
         <img src={shoDo} alt="Japanese character for writing" />
       </StyledFigure>
 
