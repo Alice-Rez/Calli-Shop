@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import device from "./device";
 
 const StyledFigure = styled.figure`
   ${(props) =>
@@ -21,6 +22,25 @@ const StyledFigure = styled.figure`
     props.stepper &&
     css`
       width: 100%;
+      max-width: var(--basket-content-width);
+
+      @media ${device.tabletLandscape} {
+        max-width: calc(0.7 * var(--basket-content-width));
+      }
+
+      .desktop {
+        display: none;
+
+        @media ${device.tabletPortrait} {
+          display: block;
+        }
+      }
+
+      .mobile {
+        @media ${device.tabletPortrait} {
+          display: none;
+        }
+      }
 
       [class^="number"],
       [class^="text"] {
@@ -30,6 +50,14 @@ const StyledFigure = styled.figure`
       [class^="text"] tspan {
         text-align: center;
         font-size: 9px;
+
+        @media ${device.tabletPortrait} {
+          font-size: 6px;
+        }
+
+        @media ${device.tabletLandscape} {
+          font-size: 7px;
+        }
       }
     `}
 `;
