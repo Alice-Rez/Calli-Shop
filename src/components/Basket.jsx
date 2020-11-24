@@ -21,14 +21,34 @@ export default function Basket() {
   let textLeft, actionLeft, textRight, actionRight;
 
   const getButtonsSpec = () => {
+    textLeft = "previous";
+    textRight = "next";
+    actionLeft = () => {
+      changePage(page - 1);
+    };
+    actionRight = () => {
+      console.log("right default");
+      changePage(page + 1);
+    };
     switch (page) {
-      default:
+      case "basket":
         textLeft = "back to Shop";
         actionLeft = goToShop;
         textRight = "go to order";
         actionRight = () => {
           changePage(1);
         };
+        break;
+      case 1:
+        actionLeft = () => {
+          changePage("basket");
+        };
+        break;
+      case 3:
+        textRight = "Order";
+        break;
+      default:
+        return null;
     }
   };
 
@@ -38,6 +58,7 @@ export default function Basket() {
   };
 
   const changePage = (value) => {
+    console.log(page);
     setPage(value);
   };
 
@@ -65,15 +86,17 @@ export default function Basket() {
           {customNamesProd ? <OrderDetails /> : null}
         </React.Fragment>
       ) : null}
-      {page !== "basket" ? <OrderStepper /> : null}
-      <StyledFlex basket>
-        <StyledButton primary basketMain onClick={actionLeft}>
-          &#8678; {textLeft}
-        </StyledButton>
-        <StyledButton primary basketMain onClick={actionRight}>
-          {textRight} &#8680;
-        </StyledButton>
-      </StyledFlex>
+      {page !== "basket" ? <OrderStepper page={page} /> : null}
+      {page !== 4 ? (
+        <StyledFlex basket>
+          <StyledButton primary basketMain onClick={actionLeft}>
+            &#8678; {textLeft}
+          </StyledButton>
+          <StyledButton primary basketMain onClick={actionRight}>
+            {textRight} &#8680;
+          </StyledButton>
+        </StyledFlex>
+      ) : null}
     </StyledSection>
   );
 }

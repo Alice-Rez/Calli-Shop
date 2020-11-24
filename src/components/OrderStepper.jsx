@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import StyledFigure from "../styledComponents/StyledFigure";
 
-export default function OrderStepper() {
-  const [page, setPage] = useState(1);
+export default function OrderStepper(props) {
+  const page = props.page;
 
   return (
     <StyledFigure stepper>
