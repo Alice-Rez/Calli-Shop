@@ -220,7 +220,7 @@ export default function OrderStepper() {
       </svg>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="-5 -2 177.201 45.0647"
+        viewBox="-5 -2 177.201 47.0647"
         className="desktop"
       >
         <g transform="translate(-21.3908 -242.6328)">
