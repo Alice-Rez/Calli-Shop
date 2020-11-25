@@ -16,9 +16,9 @@ export default function Basket() {
   const items = useSelector((state) => state.order.items);
   const [customNamesProd, setCustomNamesProd] = useState(false);
 
-  const [page, setPage] = useState("basket");
+  const [page, setPage] = useState(0);
 
-  let textLeft, actionLeft, textRight, actionRight;
+  let textLeft, actionLeft, textRight, actionRight, formId;
 
   const getButtonsSpec = () => {
     textLeft = "previous";
@@ -26,26 +26,18 @@ export default function Basket() {
     actionLeft = () => {
       changePage(page - 1);
     };
-    actionRight = () => {
-      console.log("right default");
-      changePage(page + 1);
-    };
     switch (page) {
-      case "basket":
+      case 0:
         textLeft = "back to Shop";
         actionLeft = goToShop;
         textRight = "go to order";
-        actionRight = () => {
-          changePage(1);
-        };
-        break;
-      case 1:
-        actionLeft = () => {
-          changePage("basket");
-        };
+        formId = "orderDetails";
         break;
       case 3:
         textRight = "Order";
+        actionRight = () => {
+          changePage(4);
+        };
         break;
       default:
         return null;
@@ -80,19 +72,25 @@ export default function Basket() {
 
   return (
     <StyledSection basket>
-      {page === "basket" ? (
+      {page === 0 ? (
         <React.Fragment>
           <OrderList />
-          {customNamesProd ? <OrderDetails /> : null}
+          {customNamesProd ? <OrderDetails setPage={setPage} /> : null}
         </React.Fragment>
       ) : null}
-      {page !== "basket" ? <OrderStepper page={page} /> : null}
+      {page > 0 ? <OrderStepper page={page} /> : null}
       {page !== 4 ? (
         <StyledFlex basket>
           <StyledButton primary basketMain onClick={actionLeft}>
             &#8678; {textLeft}
           </StyledButton>
-          <StyledButton primary basketMain onClick={actionRight}>
+          <StyledButton
+            primary
+            basketMain
+            type="submit"
+            form={page < 3 ? formId : null}
+            onClick={page === 3 ? actionRight : null}
+          >
             {textRight} &#8680;
           </StyledButton>
         </StyledFlex>

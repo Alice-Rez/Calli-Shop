@@ -4,8 +4,9 @@ import { addOrderDetails } from "../redux/actions";
 import StyledInput from "../styledComponents/StyledInput";
 import StyledSection from "../styledComponents/StyledSection";
 import StyledSelect from "../styledComponents/StyledSelect";
+import StyledWarning from "../styledComponents/StyledWarning";
 
-export default function OrderDetails() {
+export default function OrderDetails(props) {
   const items = useSelector((state) => state.order.items);
   const details = useSelector((state) => state.order.details);
   const dispatch = useDispatch();
@@ -15,9 +16,7 @@ export default function OrderDetails() {
   const [strongWillProd, setStrongWillProd] = useState(false);
   const [namesQty, setNamesQty] = useState(0);
   const [customQtyArray, setCustomQtyArray] = useState([]);
-
-  // this state variable is here just to make inpput controlled in the React sense of its value coming from state..... otherwise it throw error
-  const [names] = useState(details);
+  const [warning, setWarning] = useState(false);
 
   useEffect(() => {
     let familyItemExist = false;
@@ -72,6 +71,19 @@ export default function OrderDetails() {
     // };
   }, [namesQty]);
 
+  const submitOrderDetails = (e) => {
+    e.preventDefault();
+
+    if (e.target.checkValidity()) {
+      console.log("form submitted");
+      setWarning(false);
+      props.setPage(1);
+    } else {
+      setWarning(true);
+      console.log(warning);
+    }
+  };
+
   return (
     <StyledSection orderDetails>
       <p>
@@ -80,35 +92,47 @@ export default function OrderDetails() {
       </p>
       <p>- which name(s) and where you want to have written:</p>
       {customQtyArray.map((item, index) => (
-        <StyledSection key={index} detailsRow>
-          <label htmlFor="names">Name {item} </label>
-          <StyledInput
-            type="text"
-            id={`name${item}`}
-            name={`name${item}`}
-            value={names[`name${item}`]}
-            onChange={(e) => {
-              dispatch(addOrderDetails(e.target.name, e.target.value));
-            }}
-          />
-          <label htmlFor="location1">Location {item}</label>
-          <StyledSelect
-            name={`location${item}`}
-            id={`name${item}`}
-            defaultValue={details[`location${item}`] || ""}
-            onChange={(e) => {
-              dispatch(addOrderDetails(e.target.name, e.target.value));
-            }}
-          >
-            <option value="">--- Choose one ---</option>
-            <option value="standalone">Standalone</option>
-            {familyProd ? <option value="family">Family</option> : null}
-            {loveProd ? <option value="love">Love</option> : null}
-            {strongWillProd ? (
-              <option value="strong-will">Strong will-Kakizome</option>
-            ) : null}
-          </StyledSelect>
-        </StyledSection>
+        <form
+          id="orderDetails"
+          onSubmit={submitOrderDetails}
+          key={index}
+          noValidate
+        >
+          <StyledSection detailsRow>
+            <label htmlFor="names">Name {item} </label>
+            <StyledInput
+              required
+              type="text"
+              id={`name${item}`}
+              name={`name${item}`}
+              value={details[`name${item}`]}
+              onChange={(e) => {
+                dispatch(addOrderDetails(e.target.name, e.target.value));
+              }}
+            />
+            <label htmlFor="location1">Location {item}</label>
+            <StyledSelect
+              required
+              name={`location${item}`}
+              id={`location${item}`}
+              defaultValue={details[`location${item}`] || ""}
+              onChange={(e) => {
+                dispatch(addOrderDetails(e.target.name, e.target.value));
+              }}
+            >
+              <option value="">--- Choose one ---</option>
+              <option value="standalone">Standalone</option>
+              {familyProd ? <option value="family">Family</option> : null}
+              {loveProd ? <option value="love">Love</option> : null}
+              {strongWillProd ? (
+                <option value="strong-will">Strong will-Kakizome</option>
+              ) : null}
+            </StyledSelect>
+          </StyledSection>
+          {warning ? (
+            <StyledWarning>Please fill all detail fields</StyledWarning>
+          ) : null}
+        </form>
       ))}
     </StyledSection>
   );
