@@ -3,19 +3,19 @@ import StyledWarning from "../styledComponents/StyledWarning";
 
 export default function OrderPersonal(props) {
   const [warning, setWarning] = useState(false);
-  const submitOrderPersonal = (e) => {
+  const submitOrderShipPay = (e) => {
     e.preventDefault();
 
     if (e.target.checkValidity()) {
       setWarning(false);
-      props.setPage(2);
+      props.setPage(3);
     } else {
       setWarning(true);
     }
   };
   return (
-    <form id="orderPersonal" onSubmit={submitOrderPersonal} noValidate>
-      <p>Here will be form with personal data</p>
+    <form id="orderShipPay" onSubmit={submitOrderShipPay} noValidate>
+      <p>Here will be form with shipping & payment details</p>
       <input type="text" required />
       {warning ? <StyledWarning>Please fill all fields</StyledWarning> : null}
     </form>
