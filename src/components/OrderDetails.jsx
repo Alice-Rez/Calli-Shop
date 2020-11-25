@@ -130,7 +130,7 @@ export default function OrderDetails(props) {
             </StyledSelect>
           </StyledSection>
           {warning ? (
-            <StyledWarning>Please fill all detail fields</StyledWarning>
+            <StyledWarning>Please fill all fields</StyledWarning>
           ) : null}
         </form>
       ))}

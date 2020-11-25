@@ -224,66 +224,70 @@ export default function OrderStepper(props) {
         className="desktop"
       >
         <g transform="translate(-21.3908 -242.6328)">
-          <circle
-            cx="32.1446"
-            cy="251.4271"
-            r="7.9689"
-            fill={page >= 2 ? "#4d0000" : "#fff"}
-            className="circle1"
-            fillOpacity=".9412"
-            stroke={page >= 1 ? "#4d0000" : "#000"}
-            strokeWidth={page >= 1 ? "1.25" : "0.9"}
-          />
-          <text
-            x="29.8473"
-            y="253.7854"
-            fontWeight="400"
-            fontSize="8.5405"
-            fontFamily="sans-serif"
-            letterSpacing="0"
-            wordSpacing="0"
-            strokeWidth=".2135"
-            fill={page < 2 ? "#000" : "transparent"}
-          >
-            <tspan
+          <g>
+            <circle
+              cx="32.1446"
+              cy="251.4271"
+              r="7.9689"
+              fill={page >= 2 ? "#4d0000" : "#fff"}
+              className="circle1"
+              fillOpacity=".9412"
+              stroke={page >= 1 ? "#4d0000" : "#000"}
+              strokeWidth={page >= 1 ? "1.25" : "0.9"}
+            />
+            <text
               x="29.8473"
               y="253.7854"
-              fontWeight="700"
-              fontFamily="Raleway"
+              fontWeight="400"
+              fontSize="8.5405"
+              fontFamily="sans-serif"
+              letterSpacing="0"
+              wordSpacing="0"
+              strokeWidth=".2135"
+              fill={page < 2 ? "#000" : "transparent"}
             >
-              1
-            </tspan>
-          </text>
-          <circle
-            cx="105.1864"
-            cy="251.4275"
-            r="7.9689"
-            className="circle2"
-            fill={page >= 3 ? "#4d0000" : "#fff"}
-            fillOpacity=".9412"
-            stroke={page >= 2 ? "#4d0000" : "#000"}
-            strokeWidth={page >= 2 ? "1.5" : "0.9"}
-          />
-          <text
-            x="102.8281"
-            y="254.0908"
-            fontWeight="400"
-            fontSize="8.5405"
-            fontFamily="sans-serif"
-            letterSpacing="0"
-            wordSpacing="0"
-            strokeWidth=".2135"
-            fill={page < 3 ? "#000" : "transparent"}
-          >
-            <tspan
+              <tspan
+                x="29.8473"
+                y="253.7854"
+                fontWeight="700"
+                fontFamily="Raleway"
+              >
+                1
+              </tspan>
+            </text>
+          </g>
+          <g>
+            <circle
+              cx="105.1864"
+              cy="251.4275"
+              r="7.9689"
+              className="circle2"
+              fill={page >= 3 ? "#4d0000" : "#fff"}
+              fillOpacity=".9412"
+              stroke={page >= 2 ? "#4d0000" : "#000"}
+              strokeWidth={page >= 2 ? "1.5" : "0.9"}
+            />
+            <text
               x="102.8281"
               y="254.0908"
-              fontWeight="700"
-              fontFamily="Raleway"
+              fontWeight="400"
+              fontSize="8.5405"
+              fontFamily="sans-serif"
+              letterSpacing="0"
+              wordSpacing="0"
+              strokeWidth=".2135"
+              fill={page < 3 ? "#000" : "transparent"}
             >
-              2
-            </tspan>
-          </text>
+              <tspan
+                x="102.8281"
+                y="254.0908"
+                fontWeight="700"
+                fontFamily="Raleway"
+              >
+                2
+              </tspan>
+            </text>
+          </g>
           <path
             d="M30.917 254.9358c-.121-.0447-.161-.0718-.2853-.1918-.1576-.1523-.2278-.264-.4951-.788-.5958-1.1678-1.1806-2.118-1.6213-2.6343-.0591-.0692-.1014-.1321-.0938-.1395.0137-.0138.4562-.202.5014-.2142.0367-.009.3479.2495.6434.5362.4743.4599.8535.9027 1.1076 1.2932.236.3626.1822.3746.4113-.0924.7212-1.4698 1.7015-2.8985 2.7886-4.064.5718-.613 1.1114-1.082 1.7502-1.5213l.2167-.149.145.1983.145.1984-.4084.3991c-.497.486-.838.8671-1.2604 1.409-1.1385 1.4607-2.0337 3.1964-2.5238 4.894-.0939.3252-.1973.5331-.338.6794-.1908.1987-.4554.271-.6829.187z"
             fill={page >= 2 ? "#fff" : "transparent"}
