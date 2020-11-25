@@ -10,6 +10,8 @@ import OrderList from "./OrderList";
 import OrderStepper from "./OrderStepper";
 import OrderPersonal from "./OrderPersonal";
 import OrderShipPay from "./OrderShipPay";
+import OrderConfirm from "./OrderConfirm";
+import OrderSuccess from "./OrderSuccess";
 
 export default function Basket() {
   let history = useHistory();
@@ -90,6 +92,8 @@ export default function Basket() {
       {page > 0 ? <OrderStepper page={page} /> : null}
       {page === 1 ? <OrderPersonal setPage={setPage} /> : null}
       {page === 2 ? <OrderShipPay setPage={setPage} /> : null}
+      {page === 3 ? <OrderConfirm /> : null}
+      {page === 4 ? <OrderSuccess /> : null}
       {page !== 4 ? (
         <StyledFlex basket>
           <StyledButton primary basketMain onClick={actionLeft}>
