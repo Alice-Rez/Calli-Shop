@@ -3,6 +3,7 @@ const CHANGE_STOCK = "CHANGE_STOCK";
 const ADD_ITEM = "ADD_ITEM";
 const DELETE_ITEM = "DELETE_ITEM";
 const ADD_ORDER_DETAILS = "ADD_ORDER_DETAILS";
+const CLEAR_ORDER = "CLEAR_ORDER";
 
 export function toggleBasketVisibility() {
   return {
@@ -35,5 +36,11 @@ export function addOrderDetails(key, value) {
   return {
     type: ADD_ORDER_DETAILS,
     payload: { key, value },
+  };
+}
+
+export function clearOrder() {
+  return {
+    type: CLEAR_ORDER,
   };
 }

@@ -87,6 +87,19 @@ const reducer = (state = initialState, action) => {
           },
         },
       };
+    case "CLEAR_ORDER":
+      return {
+        ...state,
+        order: {
+          itemsNr: 0,
+          priceSumTotal: 0,
+          items: [],
+          details: {},
+          customer: {},
+          delivery: "",
+          payment: "",
+        },
+      };
     default:
       return state;
   }
