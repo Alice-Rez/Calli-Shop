@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { toggleBasketVisibility } from "../redux/actions";
+import { clearOrder, toggleBasketVisibility } from "../redux/actions";
 import StyledSection from "../styledComponents/StyledSection";
 import StyledButton from "../styledComponents/StyledButton";
 import StyledFlex from "../styledComponents/StyledFlex";
@@ -45,6 +45,7 @@ export default function Basket() {
         textRight = "Order";
         actionRight = () => {
           changePage(4);
+          dispatch(clearOrder());
         };
         break;
       default:
