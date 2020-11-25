@@ -75,12 +75,10 @@ export default function OrderDetails(props) {
     e.preventDefault();
 
     if (e.target.checkValidity()) {
-      console.log("form submitted");
       setWarning(false);
       props.setPage(1);
     } else {
       setWarning(true);
-      console.log(warning);
     }
   };
 

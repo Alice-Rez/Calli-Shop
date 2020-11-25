@@ -8,6 +8,7 @@ import StyledFlex from "../styledComponents/StyledFlex";
 import OrderDetails from "./OrderDetails";
 import OrderList from "./OrderList";
 import OrderStepper from "./OrderStepper";
+import OrderPersonal from "./OrderPersonal";
 
 export default function Basket() {
   let history = useHistory();
@@ -32,6 +33,9 @@ export default function Basket() {
         actionLeft = goToShop;
         textRight = "go to order";
         formId = "orderDetails";
+        break;
+      case 1:
+        formId = "orderPersonal";
         break;
       case 3:
         textRight = "Order";
@@ -79,6 +83,7 @@ export default function Basket() {
         </React.Fragment>
       ) : null}
       {page > 0 ? <OrderStepper page={page} /> : null}
+      {page === 1 ? <OrderPersonal setPage={setPage} /> : null}
       {page !== 4 ? (
         <StyledFlex basket>
           <StyledButton primary basketMain onClick={actionLeft}>
