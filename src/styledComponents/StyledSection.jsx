@@ -19,7 +19,7 @@ const StyledSection = styled.section`
     css`
       margin-bottom: var(--space-large);
 
-      p:last-of-type {
+      p:nth-of-type(2) {
         margin-bottom: var(--space-larger);
       }
     `}
