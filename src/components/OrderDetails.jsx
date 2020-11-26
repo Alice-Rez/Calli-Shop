@@ -97,7 +97,7 @@ export default function OrderDetails(props) {
           noValidate
         >
           <StyledSection detailsRow>
-            <label htmlFor="names">Name {item} </label>
+            <label htmlFor={`name${item}`}>Name {item} </label>
             <StyledInput
               required
               type="text"
@@ -108,7 +108,7 @@ export default function OrderDetails(props) {
                 dispatch(addOrderDetails(e.target.name, e.target.value));
               }}
             />
-            <label htmlFor="location1">Location {item}</label>
+            <label htmlFor={`location${item}`}>Location {item}</label>
             <StyledSelect
               required
               name={`location${item}`}
