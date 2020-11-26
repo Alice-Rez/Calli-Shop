@@ -20,6 +20,7 @@ export default function OrderPersonal(props) {
   };
 
   const submitOrderPersonal = (e) => {
+    console.log("form submitted");
     e.preventDefault();
 
     if (e.target.checkValidity()) {
