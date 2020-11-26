@@ -36,6 +36,9 @@ export default function Basket() {
         actionLeft = goToShop;
         textRight = "go to order";
         formId = "orderDetails";
+        actionRight = () => {
+          changePage(1);
+        };
         break;
       case 1:
         formId = "orderPersonal";
@@ -103,8 +106,12 @@ export default function Basket() {
             primary
             basketMain
             type="submit"
-            form={page < 3 ? formId : null}
-            onClick={page === 3 ? actionRight : null}
+            form={page < 3 && customNamesProd ? formId : null}
+            onClick={
+              page === 3 || (page === 0 && !customNamesProd)
+                ? actionRight
+                : null
+            }
           >
             {textRight} &#8680;
           </StyledButton>

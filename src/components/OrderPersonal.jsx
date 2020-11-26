@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import StyledForm from "../styledComponents/StyledForm";
+import StyledInput from "../styledComponents/StyledInput";
 import StyledWarning from "../styledComponents/StyledWarning";
 
 export default function OrderPersonal(props) {
@@ -14,10 +16,16 @@ export default function OrderPersonal(props) {
     }
   };
   return (
-    <form id="orderPersonal" onSubmit={submitOrderPersonal} noValidate>
-      <p>Here will be form with personal data</p>
-      <input type="text" required />
+    <StyledForm id="orderPersonal" onSubmit={submitOrderPersonal} noValidate>
+      <div>
+        <label htmlFor="firstName">First Name</label>
+        <StyledInput required type="text" id="firstName" name="firstName" />
+      </div>
+      <div>
+        <label htmlFor="lastName">Last Name</label>
+        <StyledInput required type="text" id="lastName" name="lastName" />
+      </div>
       {warning ? <StyledWarning>Please fill all fields</StyledWarning> : null}
-    </form>
+    </StyledForm>
   );
 }
