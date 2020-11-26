@@ -2,7 +2,7 @@ const BASKET_TOGGLE = "BASKET_TOGGLE";
 const CHANGE_STOCK = "CHANGE_STOCK";
 const ADD_ITEM = "ADD_ITEM";
 const DELETE_ITEM = "DELETE_ITEM";
-const ADD_ORDER_DETAILS = "ADD_ORDER_DETAILS";
+const ADD_ORDER_INFO = "ADD_ORDER_INFO";
 const CLEAR_ORDER = "CLEAR_ORDER";
 
 export function toggleBasketVisibility() {
@@ -32,9 +32,9 @@ export function deleteItem(id) {
   };
 }
 
-export function addOrderDetails(key, value) {
+export function addOrderInfo(key, value) {
   return {
-    type: ADD_ORDER_DETAILS,
+    type: ADD_ORDER_INFO,
     payload: { key, value },
   };
 }

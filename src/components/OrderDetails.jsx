@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addOrderDetails } from "../redux/actions";
+import { addOrderInfo } from "../redux/actions";
 import StyledInput from "../styledComponents/StyledInput";
 import StyledSection from "../styledComponents/StyledSection";
 import StyledSelect from "../styledComponents/StyledSelect";
@@ -8,7 +8,9 @@ import StyledWarning from "../styledComponents/StyledWarning";
 
 export default function OrderDetails(props) {
   const items = useSelector((state) => state.order.items);
-  const details = useSelector((state) => state.order.details);
+  const [details, setDetails] = useState(
+    useSelector((state) => state.order.details)
+  );
   const dispatch = useDispatch();
 
   const [familyProd, setFamilyProd] = useState(false);
@@ -49,10 +51,6 @@ export default function OrderDetails(props) {
     }
   }, [items]);
 
-  // const nullArray = () => {
-  //   setCustomQtyArray([]);
-  // };
-
   useEffect(() => {
     let helper = [];
     // nullArray();
@@ -71,11 +69,16 @@ export default function OrderDetails(props) {
     // };
   }, [namesQty]);
 
+  const getValue = (e) => {
+    setDetails({ ...details, [e.target.name]: e.target.value });
+  };
+
   const submitOrderDetails = (e) => {
     e.preventDefault();
 
     if (e.target.checkValidity()) {
       setWarning(false);
+      dispatch(addOrderInfo("details", details));
       props.setPage(1);
     } else {
       setWarning(true);
@@ -89,24 +92,17 @@ export default function OrderDetails(props) {
         information
       </p>
       <p>- which name(s) and where you want to have written:</p>
-      {customQtyArray.map((item, index) => (
-        <form
-          id="orderDetails"
-          onSubmit={submitOrderDetails}
-          key={index}
-          noValidate
-        >
-          <StyledSection detailsRow>
+      <form id="orderDetails" onSubmit={submitOrderDetails} noValidate>
+        {customQtyArray.map((item, index) => (
+          <StyledSection detailsRow key={index}>
             <label htmlFor={`name${item}`}>Name {item} </label>
             <StyledInput
               required
               type="text"
               id={`name${item}`}
               name={`name${item}`}
-              value={details[`name${item}`]}
-              onChange={(e) => {
-                dispatch(addOrderDetails(e.target.name, e.target.value));
-              }}
+              value={details[`name${item}`] || ""}
+              onChange={getValue}
             />
             <label htmlFor={`location${item}`}>Location {item}</label>
             <StyledSelect
@@ -114,9 +110,7 @@ export default function OrderDetails(props) {
               name={`location${item}`}
               id={`location${item}`}
               defaultValue={details[`location${item}`] || ""}
-              onChange={(e) => {
-                dispatch(addOrderDetails(e.target.name, e.target.value));
-              }}
+              onChange={getValue}
             >
               <option value="">--- Choose one ---</option>
               <option value="standalone">Standalone</option>
@@ -127,11 +121,9 @@ export default function OrderDetails(props) {
               ) : null}
             </StyledSelect>
           </StyledSection>
-          {warning ? (
-            <StyledWarning>Please fill all fields</StyledWarning>
-          ) : null}
-        </form>
-      ))}
+        ))}
+        {warning ? <StyledWarning>Please fill all fields</StyledWarning> : null}
+      </form>
     </StyledSection>
   );
 }
