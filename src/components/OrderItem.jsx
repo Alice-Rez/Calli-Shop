@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteItem } from "../redux/actions";
+import { clearDetails, deleteItem } from "../redux/actions";
 import StyledButton from "../styledComponents/StyledButton";
 import SpinControl from "./SpinControl";
 
@@ -25,6 +25,9 @@ export default function OrderItem(props) {
           primaryReverse
           onClick={() => {
             dispatch(deleteItem(item.id));
+            if (item.name === "Customized name") {
+              dispatch(clearDetails());
+            }
           }}
         >
           &#10005;

@@ -4,6 +4,7 @@ const ADD_ITEM = "ADD_ITEM";
 const DELETE_ITEM = "DELETE_ITEM";
 const ADD_ORDER_INFO = "ADD_ORDER_INFO";
 const CLEAR_ORDER = "CLEAR_ORDER";
+const CLEAR_DETAILS = "CLEAR_DETAILS";
 
 export function toggleBasketVisibility() {
   return {
@@ -42,5 +43,11 @@ export function addOrderInfo(key, value) {
 export function clearOrder() {
   return {
     type: CLEAR_ORDER,
+  };
+}
+
+export function clearDetails() {
+  return {
+    type: CLEAR_DETAILS,
   };
 }

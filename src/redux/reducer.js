@@ -97,6 +97,14 @@ const reducer = (state = initialState, action) => {
           payment: "",
         },
       };
+    case "CLEAR_DETAILS":
+      return {
+        ...state,
+        order: {
+          ...state.order,
+          details: {},
+        },
+      };
     default:
       return state;
   }
