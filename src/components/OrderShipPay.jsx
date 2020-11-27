@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import StyledForm from "../styledComponents/StyledForm";
 import StyledWarning from "../styledComponents/StyledWarning";
+import OrderButtonsMain from "./OrderButtonsMain";
 
 export default function OrderPersonal(props) {
   const [warning, setWarning] = useState(false);
@@ -14,10 +16,17 @@ export default function OrderPersonal(props) {
     }
   };
   return (
-    <form id="orderShipPay" onSubmit={submitOrderShipPay} noValidate>
+    <StyledForm id="orderShipPay" onSubmit={submitOrderShipPay} noValidate>
       <p>Here will be form with shipping & payment details</p>
       <input type="text" required />
       {warning ? <StyledWarning>Please fill all fields</StyledWarning> : null}
-    </form>
+      <OrderButtonsMain
+        textLeft={"previous"}
+        textRight={"next"}
+        actionLeft={() => {
+          props.setPage(1);
+        }}
+      />
+    </StyledForm>
   );
 }
