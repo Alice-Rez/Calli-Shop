@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addOrderInfo } from "../redux/actions";
+import StyledFieldset from "../styledComponents/StyledFieldset";
 import StyledForm from "../styledComponents/StyledForm";
 import StyledWarning from "../styledComponents/StyledWarning";
 import OrderButtonsMain from "./OrderButtonsMain";
+import dhl from "../assets/images/order-icons/dhl.svg";
+import fedex from "../assets/images/order-icons/fedex.svg";
+import pickUp from "../assets/images/order-icons/pickUp.svg";
+import cash from "../assets/images/order-icons/cash.svg";
+import paypal from "../assets/images/order-icons/paypal.svg";
+import visa from "../assets/images/order-icons/visa.svg";
 
 export default function OrderPersonal(props) {
   const delivery = useSelector((state) => state.order.delivery);
@@ -28,17 +35,18 @@ export default function OrderPersonal(props) {
 
   return (
     <StyledForm id="orderShipPay" onSubmit={submitOrderShipPay} noValidate>
-      <fieldset>
+      <StyledFieldset>
         <legend>Shipping</legend>
         <label>
           <input
+            required
             type="radio"
             name="delivery"
             value="dhl"
             onChange={getValue}
             checked={delivery === "dhl" ? true : false}
           />
-          DHL
+          <img src={dhl} alt="dhl delivery option" className="dhl" />
         </label>
         <label>
           <input
@@ -48,30 +56,34 @@ export default function OrderPersonal(props) {
             onChange={getValue}
             checked={delivery === "fedex" ? true : false}
           />
-          FedEx
+          <img src={fedex} alt="fedex delivery option" className="fedex" />
         </label>
         <label>
-          <input
-            type="radio"
-            name="delivery"
-            value="person"
-            onChange={getValue}
-            checked={delivery === "person" ? true : false}
-          />
-          Pick up in shop
+          <div>
+            <input
+              type="radio"
+              name="delivery"
+              value="person"
+              onChange={getValue}
+              checked={delivery === "person" ? true : false}
+            />
+            <span>Personal</span>
+          </div>
+          <img src={pickUp} alt="pick up delivery option" className="pick-up" />
         </label>
-      </fieldset>
-      <fieldset>
+      </StyledFieldset>
+      <StyledFieldset>
         <legend>Payment</legend>
         <label>
           <input
+            required
             type="radio"
             name="payment"
             value="paypal"
             onChange={getValue}
             checked={payment === "paypal" ? true : false}
           />
-          PayPal
+          <img src={paypal} alt="paypal payment option" className="paypal" />
         </label>
         <label>
           <input
@@ -81,7 +93,7 @@ export default function OrderPersonal(props) {
             onChange={getValue}
             checked={payment === "credit card" ? true : false}
           />
-          Credit Card
+          <img src={visa} alt="credit card payment option" className="visa" />
         </label>
         <label>
           <input
@@ -96,13 +108,17 @@ export default function OrderPersonal(props) {
             }
             disabled={delivery === "dhl" || delivery === "fedex" ? true : false}
           />
-          Cash
-          <small>
-            Possible just for picking up the delivery from shop personally
-          </small>
+          <img src={cash} alt="cash payment option" className="cash" />
+          <div>
+            <small>Just personal shipping</small>
+          </div>
         </label>
-      </fieldset>
-      {warning ? <StyledWarning>Please fill all fields</StyledWarning> : null}
+      </StyledFieldset>
+      {warning ? (
+        <StyledWarning>
+          Please choose shipping and payment options
+        </StyledWarning>
+      ) : null}
       <OrderButtonsMain
         textLeft={"previous"}
         textRight={"next"}

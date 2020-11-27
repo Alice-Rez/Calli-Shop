@@ -115,11 +115,13 @@ export default function OrderPersonal(props) {
           ))}
         </StyledSelect>
       </StyledGrid>
-      <input required type="checkbox" name="" id="agreement" />
-      <label htmlFor="agreement">
-        {" "}
-        I agree with Terms of use & Privacy Policy
-      </label>
+      <div className="last">
+        <input required type="checkbox" name="" id="agreement" />
+        <label htmlFor="agreement">
+          {" "}
+          I agree with Terms of use & Privacy Policy
+        </label>
+      </div>
       {warning ? (
         <StyledWarning>Please fill all fields correctly</StyledWarning>
       ) : null}
