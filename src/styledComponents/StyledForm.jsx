@@ -1,12 +1,11 @@
-import styled, { css } from "styled-components";
-import device from "./device";
+import styled from "styled-components";
 
 const StyledForm = styled.form`
   width: 100%;
   max-width: var(--basket-content-width);
   margin: var(--space-medium) auto;
 
-  [type="checkbox"] {
+  .last {
     margin-bottom: var(--space-large);
   }
 `;
