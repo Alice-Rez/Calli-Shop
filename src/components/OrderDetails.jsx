@@ -5,6 +5,7 @@ import StyledInput from "../styledComponents/StyledInput";
 import StyledSection from "../styledComponents/StyledSection";
 import StyledSelect from "../styledComponents/StyledSelect";
 import StyledWarning from "../styledComponents/StyledWarning";
+import OrderButtonsMain from "./OrderButtonsMain";
 
 export default function OrderDetails(props) {
   const items = useSelector((state) => state.order.items);
@@ -123,6 +124,12 @@ export default function OrderDetails(props) {
           </StyledSection>
         ))}
         {warning ? <StyledWarning>Please fill all fields</StyledWarning> : null}
+        <OrderButtonsMain
+          textLeft={"back to Shop"}
+          actionLeft={props.goToShop}
+          textRight={"go to order"}
+          actionRight={null}
+        />
       </form>
     </StyledSection>
   );

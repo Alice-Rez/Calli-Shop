@@ -92,7 +92,7 @@ export default function Basket() {
         <React.Fragment>
           <OrderList />
           {customNamesProd ? (
-            <OrderDetails setPage={setPage} />
+            <OrderDetails setPage={setPage} goToShop={goToShop} />
           ) : (
             <OrderButtonsMain
               textLeft={"back to Shop"}
