@@ -111,7 +111,7 @@ export default function Basket() {
       {page === 2 ? <OrderShipPay setPage={setPage} /> : null}
       {page === 3 ? <OrderConfirm /> : null}
       {page === 4 ? <OrderSuccess /> : null}
-      {page > 0 && page < 4 ? (
+      {page > 1 && page < 4 ? (
         <StyledFlex basket>
           <StyledButton primary basketMain onClick={actionLeft}>
             &#8678; {textLeft}

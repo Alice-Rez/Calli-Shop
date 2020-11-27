@@ -6,6 +6,7 @@ import StyledForm from "../styledComponents/StyledForm";
 import StyledInput from "../styledComponents/StyledInput";
 import StyledSelect from "../styledComponents/StyledSelect";
 import StyledWarning from "../styledComponents/StyledWarning";
+import OrderButtonsMain from "./OrderButtonsMain";
 
 export default function OrderPersonal(props) {
   const [warning, setWarning] = useState(false);
@@ -137,6 +138,13 @@ export default function OrderPersonal(props) {
       {warning ? (
         <StyledWarning>Please fill all fields correctly</StyledWarning>
       ) : null}
+      <OrderButtonsMain
+        textLeft={"previous"}
+        textRight={"next"}
+        actionLeft={() => {
+          props.setPage(0);
+        }}
+      />
     </StyledForm>
   );
 }
