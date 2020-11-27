@@ -12,6 +12,7 @@ import OrderPersonal from "./OrderPersonal";
 import OrderShipPay from "./OrderShipPay";
 import OrderConfirm from "./OrderConfirm";
 import OrderSuccess from "./OrderSuccess";
+import OrderButtonsMain from "./OrderButtonsMain";
 
 export default function Basket() {
   let history = useHistory();
@@ -37,6 +38,7 @@ export default function Basket() {
         textRight = "go to order";
         formId = "orderDetails";
         actionRight = () => {
+          console.log("change page to 1");
           changePage(1);
         };
         break;
@@ -89,7 +91,19 @@ export default function Basket() {
       {page === 0 ? (
         <React.Fragment>
           <OrderList />
-          {customNamesProd ? <OrderDetails setPage={setPage} /> : null}
+          {customNamesProd ? (
+            <OrderDetails setPage={setPage} />
+          ) : (
+            <OrderButtonsMain
+              textLeft={"back to Shop"}
+              actionLeft={goToShop}
+              textRight={"go to order"}
+              actionRight={() => {
+                console.log("change page to 1");
+                changePage(1);
+              }}
+            />
+          )}
         </React.Fragment>
       ) : null}
       {page > 0 ? <OrderStepper page={page} /> : null}
@@ -97,7 +111,7 @@ export default function Basket() {
       {page === 2 ? <OrderShipPay setPage={setPage} /> : null}
       {page === 3 ? <OrderConfirm /> : null}
       {page === 4 ? <OrderSuccess /> : null}
-      {page !== 4 ? (
+      {page > 0 && page < 4 ? (
         <StyledFlex basket>
           <StyledButton primary basketMain onClick={actionLeft}>
             &#8678; {textLeft}
@@ -106,7 +120,11 @@ export default function Basket() {
             primary
             basketMain
             type="submit"
-            form={page < 3 && customNamesProd ? formId : null}
+            form={
+              (page === 0 && customNamesProd) || page === 1 || page === 2
+                ? formId
+                : null
+            }
             onClick={
               page === 3 || (page === 0 && !customNamesProd)
                 ? actionRight
