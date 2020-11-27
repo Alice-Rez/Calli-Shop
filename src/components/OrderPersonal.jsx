@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import countryList from "../data/countries";
 import { addOrderInfo } from "../redux/actions";
 import StyledForm from "../styledComponents/StyledForm";
+import StyledGrid from "../styledComponents/StyledGrid";
 import StyledInput from "../styledComponents/StyledInput";
 import StyledSelect from "../styledComponents/StyledSelect";
 import StyledWarning from "../styledComponents/StyledWarning";
@@ -34,7 +35,7 @@ export default function OrderPersonal(props) {
   };
   return (
     <StyledForm id="orderPersonal" onSubmit={submitOrderPersonal} noValidate>
-      <div>
+      <StyledGrid formGrid>
         <label htmlFor="firstName">First Name</label>
         <StyledInput
           required
@@ -44,8 +45,6 @@ export default function OrderPersonal(props) {
           value={customer.firstName || ""}
           onInput={getValue}
         />
-      </div>
-      <div>
         <label htmlFor="lastName">Last Name</label>
         <StyledInput
           required
@@ -55,8 +54,6 @@ export default function OrderPersonal(props) {
           value={customer.lastName || ""}
           onInput={getValue}
         />
-      </div>
-      <div>
         <label htmlFor="email">E-mail</label>
         <StyledInput
           required
@@ -66,8 +63,6 @@ export default function OrderPersonal(props) {
           value={customer.email || ""}
           onInput={getValue}
         />
-      </div>
-      <div>
         <label htmlFor="phone">Telephone nr.</label>
         <StyledInput
           required
@@ -77,8 +72,6 @@ export default function OrderPersonal(props) {
           value={customer.phone || ""}
           onInput={getValue}
         />
-      </div>
-      <div>
         <label htmlFor="address">Address</label>
         <StyledInput
           required
@@ -88,8 +81,6 @@ export default function OrderPersonal(props) {
           value={customer.address || ""}
           onInput={getValue}
         />
-      </div>
-      <div>
         <label htmlFor="zip">Zip code</label>
         <StyledInput
           required
@@ -99,8 +90,6 @@ export default function OrderPersonal(props) {
           value={customer.zip || ""}
           onInput={getValue}
         />
-      </div>
-      <div>
         <label htmlFor="city">City</label>
         <StyledInput
           required
@@ -110,8 +99,6 @@ export default function OrderPersonal(props) {
           value={customer.city || ""}
           onInput={getValue}
         />
-      </div>
-      <div>
         <label htmlFor="country">Country</label>
         <StyledSelect
           required
@@ -127,14 +114,12 @@ export default function OrderPersonal(props) {
             </option>
           ))}
         </StyledSelect>
-      </div>
-      <div>
-        <input required type="checkbox" name="" id="agreement" />
-        <label htmlFor="agreement">
-          {" "}
-          I agree with terms of use & Privacy Policy
-        </label>
-      </div>
+      </StyledGrid>
+      <input required type="checkbox" name="" id="agreement" />
+      <label htmlFor="agreement">
+        {" "}
+        I agree with Terms of use & Privacy Policy
+      </label>
       {warning ? (
         <StyledWarning>Please fill all fields correctly</StyledWarning>
       ) : null}
