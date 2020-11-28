@@ -63,9 +63,9 @@ export default function OrderPersonal(props) {
             <input
               type="radio"
               name="delivery"
-              value="person"
+              value="in shop"
               onChange={getValue}
-              checked={delivery === "person" ? true : false}
+              checked={delivery === "in shop" ? true : false}
             />
             <span>Pick up in shop</span>
           </div>
@@ -102,7 +102,7 @@ export default function OrderPersonal(props) {
             value="cash"
             onChange={getValue}
             checked={
-              payment === "cash" && (delivery === "person" || delivery === "")
+              payment === "cash" && (delivery === "in shop" || delivery === "")
                 ? true
                 : false
             }

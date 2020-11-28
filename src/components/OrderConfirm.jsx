@@ -76,9 +76,9 @@ export default function OrderConfirm(props) {
                     })}
                   </td>
                 ) : null}
-                <td>{item.price}</td>
+                <td>{item.price} &#8364;</td>
                 <td>{item.qty}</td>
-                <td>{item.priceSum}</td>
+                <td>{item.priceSum} &#8364;</td>
               </tr>
             );
           })}
