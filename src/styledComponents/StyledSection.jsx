@@ -50,6 +50,25 @@ const StyledSection = styled.section`
         margin-bottom: var(--space-medium);
       }
     `}
+
+    ${(props) =>
+    props.confirmation &&
+    css`
+      width: 100%;
+      max-width: var(--basket-content-width);
+      text-align: left;
+
+      h5 {
+        font-size: 1rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: var(--space-small);
+      }
+
+      p {
+        margin-top: 0;
+      }
+    `}
 `;
 
 export default StyledSection;

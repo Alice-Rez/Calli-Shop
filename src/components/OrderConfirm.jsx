@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearOrder } from "../redux/actions";
+import StyledSection from "../styledComponents/StyledSection";
+import StyledTable from "../styledComponents/StyledTable";
 import OrderButtonsMain from "./OrderButtonsMain";
 
 export default function OrderConfirm(props) {
@@ -26,29 +28,31 @@ export default function OrderConfirm(props) {
   return (
     <React.Fragment>
       <h4>Order Summary</h4>
-      <p>Customer:</p>
-      <p>
-        {order.customer.firstName} {order.customer.lastName} <br />
-        {order.customer.address} <br />
-        {order.customer.zip} {order.customer.city}
-        <br />
-        {order.customer.country}
-        <br />
-      </p>
-      <p>
-        {order.customer.email} <br />
-        {order.customer.phone}
-      </p>
-      <p>Payment method:</p>
-      <p>{order.payment}</p>
-      <p>Shipping method:</p>
-      <p>{order.delivery}</p>
-      <p>Order:</p>
-      <table>
+      <StyledSection confirmation>
+        <h5>Customer:</h5>
+        <p>
+          {order.customer.firstName} {order.customer.lastName} <br />
+          {order.customer.address} <br />
+          {order.customer.zip} {order.customer.city}
+          <br />
+          {order.customer.country}
+          <br />
+        </p>
+        <p>
+          {order.customer.email} <br />
+          {order.customer.phone}
+        </p>
+        <h5>Payment method:</h5>
+        <p>{order.payment}</p>
+        <h5>Shipping method:</h5>
+        <p>{order.delivery}</p>
+      </StyledSection>
+      <StyledTable confirmation>
+        <caption>Order:</caption>
         <thead>
           <tr>
             <th>Product name</th>
-            {withName.length > 0 ? <th>With name</th> : null}
+            {withName.length > 0 ? <th>Details</th> : null}
             <th>Price</th>
             <th>Qty</th>
             <th>Price total</th>
@@ -79,7 +83,7 @@ export default function OrderConfirm(props) {
             );
           })}
         </tbody>
-      </table>
+      </StyledTable>
 
       <OrderButtonsMain
         textLeft={"previous"}
