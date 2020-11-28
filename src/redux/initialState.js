@@ -4,9 +4,18 @@ const initialState = {
     priceSumTotal: 0,
     items: [],
     details: {},
-    customer: {},
-    delivery: "",
-    payment: "",
+    customer: {
+      address: "Some Street 25",
+      city: "Sydney",
+      country: "Australia",
+      email: "jane.doe@gmail.com",
+      firstName: "Jane",
+      lastName: "Doe",
+      phone: "123456789",
+      zip: "2000",
+    },
+    delivery: "dhl",
+    payment: "paypal",
   },
   products: [
     {
