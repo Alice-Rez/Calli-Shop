@@ -69,7 +69,7 @@ export default function Basket() {
       {page === 1 ? <OrderPersonal setPage={setPage} /> : null}
       {page === 2 ? <OrderShipPay setPage={setPage} /> : null}
       {page === 3 ? <OrderConfirm setPage={setPage} /> : null}
-      {page === 4 ? <OrderSuccess /> : null}
+      {page === 4 ? <OrderSuccess goToShop={goToShop} /> : null}
     </StyledSection>
   );
 }
