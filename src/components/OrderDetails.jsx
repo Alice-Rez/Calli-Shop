@@ -70,6 +70,23 @@ export default function OrderDetails(props) {
     // };
   }, [namesQty]);
 
+  // for deleting values in details when removed customized name qty
+
+  useEffect(() => {
+    if (Object.values(details).length > 0) {
+      let difference =
+        Object.values(details).length / 2 - customQtyArray.length;
+      if (difference > 0) {
+        let results = {};
+        for (let i = 1; i <= difference; i++) {
+          results[`name${i}`] = details[`name${i}`];
+          results[`location${i}`] = details[`location${i}`];
+        }
+        setDetails(results);
+      }
+    }
+  }, [customQtyArray]);
+
   const getValue = (e) => {
     setDetails({ ...details, [e.target.name]: e.target.value });
   };
