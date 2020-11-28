@@ -7,7 +7,7 @@ export default function OrderList() {
   const items = useSelector((state) => state.order.items);
   const finalPrice = useSelector((state) => state.order.priceSumTotal);
   return (
-    <StyledTable>
+    <StyledTable list>
       <tbody>
         {items.map((item, index) => {
           return <OrderItem item={item} key={index} />;
