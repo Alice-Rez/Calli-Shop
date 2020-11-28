@@ -67,7 +67,7 @@ export default function OrderPersonal(props) {
               onChange={getValue}
               checked={delivery === "person" ? true : false}
             />
-            <span>Personal</span>
+            <span>Pick up in shop</span>
           </div>
           <img src={pickUp} alt="pick up delivery option" className="pick-up" />
         </label>
@@ -110,7 +110,7 @@ export default function OrderPersonal(props) {
           />
           <img src={cash} alt="cash payment option" className="cash" />
           <div>
-            <small>Just personal shipping</small>
+            <small>Just pick up in shop</small>
           </div>
         </label>
       </StyledFieldset>
