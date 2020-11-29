@@ -18,15 +18,15 @@ const StyledTable = styled.table`
     text-transform: uppercase;
   }
 
+  tfoot tr,
+  tfoot td {
+    padding-top: calc(var(--space-small) / 2);
+    font-weight: 900;
+  }
+
   ${(props) =>
     props.orderList &&
     css`
-      tfoot tr,
-      tfoot td {
-        padding-top: calc(var(--space-small) / 2);
-        font-weight: 900;
-      }
-
       @media (max-width: 768px) {
         margin-top: var(--space-medium);
 
@@ -95,6 +95,21 @@ const StyledTable = styled.table`
       td:last-of-type,
       th:last-of-type {
         text-align: right;
+      }
+
+      td {
+        padding: calc(var(--space-small) / 2);
+      }
+
+      th {
+        padding: var(--space-small) calc(var(--space-small) / 2);
+      }
+
+      tbody tr:nth-last-of-type(2) td {
+        padding-top: var(--space-small);
+      }
+      tfoot th {
+        border-top: solid 1px var(--black);
       }
     `}
 `;

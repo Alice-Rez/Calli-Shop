@@ -74,24 +74,26 @@ export default function OrderConfirm(props) {
             return (
               <tr key={index}>
                 <td>{item.name}</td>
-                <td>
-                  {withName.length > 0
-                    ? withName.map((name, index, array) => {
-                        if (
-                          item.name.toLowerCase().includes(name.toLowerCase())
-                        ) {
-                          return array[index + 1] + " ";
-                        }
-                        return null;
-                      })
-                    : null}
-                  {item.name === "Customized name" && standalone.length > 0
-                    ? standalone.map((name) => {
-                        console.log(name);
-                        return name + " ";
-                      })
-                    : null}
-                </td>
+                {withName.length > 0 || standalone.length > 0 ? (
+                  <td>
+                    {withName.length > 0
+                      ? withName.map((name, index, array) => {
+                          if (
+                            item.name.toLowerCase().includes(name.toLowerCase())
+                          ) {
+                            return array[index + 1] + " ";
+                          }
+                          return null;
+                        })
+                      : null}
+                    {item.name === "Customized name" && standalone.length > 0
+                      ? standalone.map((name) => {
+                          console.log(name);
+                          return name + " ";
+                        })
+                      : null}
+                  </td>
+                ) : null}
                 <td>{item.price} &#8364;</td>
                 <td>{item.qty}</td>
                 <td>{item.priceSum} &#8364;</td>
@@ -115,9 +117,9 @@ export default function OrderConfirm(props) {
         </tbody>
         <tfoot>
           <tr>
-            <td
+            <th
               colSpan={withName.length > 0 || standalone.length > 0 ? "3" : "2"}
-            ></td>
+            ></th>
             <th>Total</th>
             <th>{order.priceSumTotal.toFixed(2)} &#8364;</th>
           </tr>

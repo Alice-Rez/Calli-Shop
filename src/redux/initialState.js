@@ -66,7 +66,7 @@ const initialState = {
       id: 5,
       name: "Strong Will",
       style: "Gyosho",
-      img: "strong-will",
+      img: "strong will",
       alt: "Strong will written by Japanese Calligraphy",
       details:
         "For strong willed people. Possible also as new-year wish (Kakizome) with name of your own choice.",
