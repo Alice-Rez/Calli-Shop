@@ -108,8 +108,53 @@ const StyledTable = styled.table`
       tbody tr:nth-last-of-type(2) td {
         padding-top: var(--space-small);
       }
-      tfoot th {
+      /* tfoot th {
         border-top: solid 1px var(--black);
+      } */
+
+      @media (max-width: 767px) {
+        margin-top: var(--space-medium);
+
+        thead {
+          display: none;
+        }
+
+        tr {
+          display: grid;
+          grid-template-areas: "title title title" "details details details" "price qty sum";
+          grid-template-columns: auto 1fr auto;
+          grid-template-rows: auto auto auto;
+          align-items: center;
+          margin-top: var(--space-small);
+
+          :not(:last-of-type) {
+            margin-top: var(--space-larger);
+          }
+
+          td:first-of-type {
+            grid-area: title;
+          }
+
+          .details {
+            grid-area: details;
+            text-align: right;
+          }
+
+          td:nth-last-of-type(3) {
+            grid-area: price;
+          }
+          td:nth-last-of-type(2) {
+            grid-area: qty;
+          }
+          td:last-of-type {
+            grid-area: sum;
+          }
+        }
+
+        tfoot tr {
+          grid-template-areas: "label label" "sumTotal ";
+          border-top: solid 1px var(--black);
+        }
       }
     `}
 `;

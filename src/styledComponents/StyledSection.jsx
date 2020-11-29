@@ -33,7 +33,7 @@ const StyledSection = styled.section`
       justify-content: center;
       margin-bottom: var(--space-medium);
 
-      @media ${device.tabletPortrait} {
+      @media (min-width: 768px) {
         flex-direction: row;
 
         input {

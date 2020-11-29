@@ -75,7 +75,7 @@ export default function OrderConfirm(props) {
               <tr key={index}>
                 <td>{item.name}</td>
                 {withName.length > 0 || standalone.length > 0 ? (
-                  <td>
+                  <td className="details">
                     {withName.length > 0
                       ? withName.map((name, index, array) => {
                           if (
