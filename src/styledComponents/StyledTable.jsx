@@ -19,7 +19,7 @@ const StyledTable = styled.table`
   }
 
   ${(props) =>
-    props.list &&
+    props.orderList &&
     css`
       tfoot tr,
       tfoot td {
@@ -91,6 +91,11 @@ const StyledTable = styled.table`
     props.confirmation &&
     css`
       margin-top: var(--space-small);
+
+      td:last-of-type,
+      th:last-of-type {
+        text-align: right;
+      }
     `}
 `;
 

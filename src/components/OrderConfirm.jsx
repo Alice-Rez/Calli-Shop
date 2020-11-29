@@ -9,20 +9,29 @@ export default function OrderConfirm(props) {
   const order = useSelector((state) => state.order);
   const dispatch = useDispatch();
   const [withName, setWithName] = useState([]);
+  const [standalone, setStandalone] = useState([]);
 
   useEffect(() => {
-    let results = Object.values(order.details).reduce((acc, value, index) => {
+    let alone = [];
+    let added = [];
+
+    Object.values(order.details).map((value, index) => {
       let key = Object.keys(order.details)[index];
+      let nameIndex = Object.keys(order.details).indexOf(
+        `name${+key.split("location")[1]}`
+      );
       if (value !== "standalone" && key.startsWith("location")) {
-        acc.push(value);
-        let nameIndex = Object.keys(order.details).indexOf(
-          `name${+key.split("location")[1]}`
-        );
-        acc.push(Object.values(order.details)[nameIndex]);
+        added.push(value);
+        added.push(Object.values(order.details)[nameIndex]);
+      } else if (value === "standalone" && key.startsWith("location")) {
+        alone.push(Object.values(order.details)[nameIndex]);
       }
-      return acc;
-    }, []);
-    setWithName(results);
+      return value;
+    });
+
+    console.log(added, alone);
+    setWithName(added);
+    setStandalone(alone);
   }, []);
 
   return (
@@ -48,14 +57,16 @@ export default function OrderConfirm(props) {
         <p>{order.delivery}</p>
       </StyledSection>
       <StyledTable confirmation>
-        <caption>Order:</caption>
+        <caption>Ordered items:</caption>
         <thead>
           <tr>
             <th>Product name</th>
-            {withName.length > 0 ? <th>Details</th> : null}
-            <th>Price</th>
+            {withName.length > 0 || standalone.length > 0 ? (
+              <th>Details</th>
+            ) : null}
+            <th>Unit price</th>
             <th>Qty</th>
-            <th>Price total</th>
+            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -63,26 +74,54 @@ export default function OrderConfirm(props) {
             return (
               <tr key={index}>
                 <td>{item.name}</td>
-                {withName.length > 0 ? (
-                  <td>
-                    {withName.map((name, index, array) => {
-                      console.log(item.name);
-                      if (
-                        item.name.toLowerCase().includes(name.toLowerCase())
-                      ) {
-                        return array[index + 1];
-                      }
-                      return null;
-                    })}
-                  </td>
-                ) : null}
+                <td>
+                  {withName.length > 0
+                    ? withName.map((name, index, array) => {
+                        if (
+                          item.name.toLowerCase().includes(name.toLowerCase())
+                        ) {
+                          return array[index + 1] + " ";
+                        }
+                        return null;
+                      })
+                    : null}
+                  {item.name === "Customized name" && standalone.length > 0
+                    ? standalone.map((name) => {
+                        console.log(name);
+                        return name + " ";
+                      })
+                    : null}
+                </td>
                 <td>{item.price} &#8364;</td>
                 <td>{item.qty}</td>
                 <td>{item.priceSum} &#8364;</td>
               </tr>
             );
           })}
+          <tr>
+            <td
+              colSpan={withName.length > 0 || standalone.length > 0 ? "3" : "2"}
+            ></td>
+            <td>Sum</td>
+            <td>{order.priceSumTotal.toFixed(2)} &#8364;</td>
+          </tr>
+          <tr>
+            <td
+              colSpan={withName.length > 0 || standalone.length > 0 ? "3" : "2"}
+            ></td>
+            <td>Delivery</td>
+            <td>0 &#8364;</td>
+          </tr>
         </tbody>
+        <tfoot>
+          <tr>
+            <td
+              colSpan={withName.length > 0 || standalone.length > 0 ? "3" : "2"}
+            ></td>
+            <th>Total</th>
+            <th>{order.priceSumTotal.toFixed(2)} &#8364;</th>
+          </tr>
+        </tfoot>
       </StyledTable>
 
       <OrderButtonsMain
