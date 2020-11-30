@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import StyledTable from "../styledComponents/StyledTable";
+import StyledTable from "../../styledComponents/StyledTable";
 import OrderItem from "./OrderItem";
 
 export default function OrderList() {

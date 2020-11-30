@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addOrderInfo } from "../redux/actions";
-import StyledFieldset from "../styledComponents/StyledFieldset";
-import StyledForm from "../styledComponents/StyledForm";
-import StyledWarning from "../styledComponents/StyledWarning";
+import { addOrderInfo } from "../../redux/actions";
+import StyledFieldset from "../../styledComponents/StyledFieldset";
+import StyledForm from "../../styledComponents/StyledForm";
+import StyledWarning from "../../styledComponents/StyledWarning";
 import OrderButtonsMain from "./OrderButtonsMain";
-import dhl from "../assets/images/order-icons/dhl.svg";
-import fedex from "../assets/images/order-icons/fedex.svg";
-import pickUp from "../assets/images/order-icons/pickUp.svg";
-import cash from "../assets/images/order-icons/cash.svg";
-import paypal from "../assets/images/order-icons/paypal.svg";
-import visa from "../assets/images/order-icons/visa.svg";
+import dhl from "../../assets/images/order-icons/dhl.svg";
+import fedex from "../../assets/images/order-icons/fedex.svg";
+import pickUp from "../../assets/images/order-icons/pickUp.svg";
+import cash from "../../assets/images/order-icons/cash.svg";
+import paypal from "../../assets/images/order-icons/paypal.svg";
+import visa from "../../assets/images/order-icons/visa.svg";
 
 export default function OrderPersonal(props) {
   const delivery = useSelector((state) => state.order.delivery);

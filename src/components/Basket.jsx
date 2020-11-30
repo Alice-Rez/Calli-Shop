@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { toggleBasketVisibility } from "../redux/actions";
 import StyledSection from "../styledComponents/StyledSection";
-import OrderDetails from "./OrderDetails";
-import OrderList from "./OrderList";
-import OrderStepper from "./OrderStepper";
-import OrderPersonal from "./OrderPersonal";
-import OrderShipPay from "./OrderShipPay";
-import OrderConfirm from "./OrderConfirm";
-import OrderSuccess from "./OrderSuccess";
-import OrderButtonsMain from "./OrderButtonsMain";
+import OrderDetails from "./order/OrderDetails";
+import OrderList from "./order/OrderList";
+import OrderStepper from "./order/OrderStepper";
+import OrderPersonal from "./order/OrderPersonal";
+import OrderShipPay from "./order/OrderShipPay";
+import OrderConfirm from "./order/OrderConfirm";
+import OrderSuccess from "./order/OrderSuccess";
+import OrderButtonsMain from "./order/OrderButtonsMain";
 
 export default function Basket() {
   let history = useHistory();

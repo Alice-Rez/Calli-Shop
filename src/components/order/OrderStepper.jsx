@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import StyledFigure from "../styledComponents/StyledFigure";
+import StyledFigure from "../../styledComponents/StyledFigure";
 
 export default function OrderStepper(props) {
   const page = props.page;

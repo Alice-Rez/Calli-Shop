@@ -1,6 +1,6 @@
 import React from "react";
-import StyledButton from "../styledComponents/StyledButton";
-import StyledSuccess from "../styledComponents/StyledSuccess";
+import StyledButton from "../../styledComponents/StyledButton";
+import StyledSuccess from "../../styledComponents/StyledSuccess";
 
 export default function OrderSuccess(props) {
   return (

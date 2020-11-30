@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addOrderInfo } from "../redux/actions";
-import StyledInput from "../styledComponents/StyledInput";
-import StyledSection from "../styledComponents/StyledSection";
-import StyledSelect from "../styledComponents/StyledSelect";
-import StyledWarning from "../styledComponents/StyledWarning";
+import { addOrderInfo } from "../../redux/actions";
+import StyledInput from "../../styledComponents/StyledInput";
+import StyledSection from "../../styledComponents/StyledSection";
+import StyledSelect from "../../styledComponents/StyledSelect";
+import StyledWarning from "../../styledComponents/StyledWarning";
 import OrderButtonsMain from "./OrderButtonsMain";
 
 export default function OrderDetails(props) {

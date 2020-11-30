@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import countryList from "../data/countries";
-import { addOrderInfo } from "../redux/actions";
-import StyledForm from "../styledComponents/StyledForm";
-import StyledGrid from "../styledComponents/StyledGrid";
-import StyledInput from "../styledComponents/StyledInput";
-import StyledSelect from "../styledComponents/StyledSelect";
-import StyledWarning from "../styledComponents/StyledWarning";
+import countryList from "../../data/countries";
+import { addOrderInfo } from "../../redux/actions";
+import StyledForm from "../../styledComponents/StyledForm";
+import StyledGrid from "../../styledComponents/StyledGrid";
+import StyledInput from "../../styledComponents/StyledInput";
+import StyledSelect from "../../styledComponents/StyledSelect";
+import StyledWarning from "../../styledComponents/StyledWarning";
 import OrderButtonsMain from "./OrderButtonsMain";
 
 export default function OrderPersonal(props) {

@@ -1,6 +1,6 @@
 import React from "react";
-import StyledButton from "../styledComponents/StyledButton";
-import StyledFlex from "../styledComponents/StyledFlex";
+import StyledButton from "../../styledComponents/StyledButton";
+import StyledFlex from "../../styledComponents/StyledFlex";
 
 export default function OrderButtonsMain(props) {
   const { actionLeft, textLeft, actionRight, textRight } = props;

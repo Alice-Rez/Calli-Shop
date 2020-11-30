@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { clearOrder } from "../redux/actions";
-import StyledSection from "../styledComponents/StyledSection";
-import StyledTable from "../styledComponents/StyledTable";
+import { clearOrder } from "../../redux/actions";
+import StyledSection from "../../styledComponents/StyledSection";
+import StyledTable from "../../styledComponents/StyledTable";
 import OrderButtonsMain from "./OrderButtonsMain";
 
 export default function OrderConfirm(props) {
