@@ -13,6 +13,15 @@ const StyledFooter = styled.footer`
   img {
     width: 7%;
     transform: translateY(40%);
+
+    @media ${device.tabletPortrait} {
+      width: 10%;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--black);
   }
 
   nav {
@@ -21,7 +30,6 @@ const StyledFooter = styled.footer`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: var(--space-small);
 
     @media ${device.tabletLandscape} {
       justify-content: space-between;
