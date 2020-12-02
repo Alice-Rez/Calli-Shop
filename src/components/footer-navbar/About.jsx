@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import StyledCloseButton from "../../styledComponents/StyledCloseButton";
 import StyledLink from "../../styledComponents/StyledLink";
 import StyledSection from "../../styledComponents/StyledSection";
@@ -7,10 +8,11 @@ import StyledFlex from "../../styledComponents/StyledFlex";
 import StyledProfileImage from "../../styledComponents/StyledProfileImg";
 
 export default function About() {
+  const isInBasket = useSelector((state) => state.isInBasket);
   return (
     <StyledSection basket>
       <StyledCloseButton>
-        <StyledLink to="/">x</StyledLink>
+        <StyledLink to={isInBasket ? "/basket" : "/"}>x</StyledLink>
       </StyledCloseButton>
       <h4>About us</h4>
       <StyledFlex aboutUs>
@@ -26,9 +28,7 @@ export default function About() {
             React Router DOM). For the state management was used Redux
           </p>
           <p>
-            Visit{" "}
-            <StyledLink to="https://github.com/Alice-Rez">GitHub</StyledLink>{" "}
-            Account.
+            Visit <a href="https://github.com/Alice-Rez">GitHub </a> Account.
           </p>
         </div>
       </StyledFlex>
