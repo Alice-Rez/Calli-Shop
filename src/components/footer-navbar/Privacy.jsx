@@ -10,6 +10,7 @@ export default function Privacy() {
         <StyledLink to="/">x</StyledLink>
       </StyledCloseButton>
       <h4>Privacy Policy</h4>
+      <p>We are respecting all rights for privacy accordingly to GDPR.</p>
     </StyledSection>
   );
 }
