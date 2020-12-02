@@ -74,6 +74,16 @@ const StyledSection = styled.section`
         margin-top: 0;
       }
     `}
+
+    ${(props) =>
+    props.license &&
+    css`
+      width: 90%;
+      max-width: 480px;
+      text-align: left;
+      font-family: monospace;
+      margin-bottom: var(--space-larger);
+    `}
 `;
 
 export default StyledSection;
