@@ -17,6 +17,12 @@ const StyledSection = styled.section`
         text-transform: uppercase;
         color: var(--primary-dark);
       }
+
+      a {
+        text-decoration: none;
+        color: var(--primary);
+        font-weight: 900;
+      }
     `}
 
   ${(props) =>

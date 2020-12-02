@@ -135,7 +135,7 @@ export default function OrderDetails(props) {
               {familyProd ? <option value="family">Family</option> : null}
               {loveProd ? <option value="love">Love</option> : null}
               {strongWillProd ? (
-                <option value="strong-will">Strong will-Kakizome</option>
+                <option value="strong will">Strong will-Kakizome</option>
               ) : null}
             </StyledSelect>
           </StyledSection>

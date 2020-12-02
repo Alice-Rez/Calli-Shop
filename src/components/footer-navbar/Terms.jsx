@@ -1,13 +1,16 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import StyledCloseButton from "../../styledComponents/StyledCloseButton";
 import StyledLink from "../../styledComponents/StyledLink";
 import StyledSection from "../../styledComponents/StyledSection";
 
 export default function Terms() {
+  const isInBasket = useSelector((state) => state.isInBasket);
+
   return (
     <StyledSection basket>
       <StyledCloseButton>
-        <StyledLink to="/">x</StyledLink>
+        <StyledLink to={isInBasket ? "/basket" : "/"}>x</StyledLink>
       </StyledCloseButton>
       <h4>Terms & Conditions</h4>
       <p>
@@ -20,10 +23,8 @@ export default function Terms() {
       </p>
       <p>
         Code of this page that can be found at{" "}
-        <StyledLink to="https://github.com/Alice-Rez/Calli-Shop">
-          GitHib
-        </StyledLink>{" "}
-        is under MIT license:{" "}
+        <a href="https://github.com/Alice-Rez/Calli-Shop">GitHub </a> is under
+        MIT license:{" "}
       </p>
       <StyledSection license>
         <p>MIT License</p>
