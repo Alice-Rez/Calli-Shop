@@ -119,7 +119,7 @@ export default function OrderPersonal(props) {
         <input required type="checkbox" name="" id="agreement" />
         <label htmlFor="agreement">
           {" "}
-          I agree with Terms of use & Privacy Policy
+          I agree with Terms & Conditions and Privacy Policy
         </label>
       </div>
       {warning ? (

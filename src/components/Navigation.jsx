@@ -14,6 +14,7 @@ export default function Navigation() {
     <StyledNav>
       {isInBasket ? (
         <StyledLink
+          main
           to="/"
           onClick={() => {
             dispatch(toggleBasketVisibility());
@@ -23,6 +24,7 @@ export default function Navigation() {
         </StyledLink>
       ) : (
         <StyledLink
+          main
           to="/basket"
           onClick={() => {
             dispatch(toggleBasketVisibility());
