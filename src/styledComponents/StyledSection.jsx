@@ -12,6 +12,11 @@ const StyledSection = styled.section`
       padding: var(--space-medium);
       display: grid;
       place-items: center;
+
+      h4 {
+        text-transform: uppercase;
+        color: var(--primary-dark);
+      }
     `}
 
   ${(props) =>

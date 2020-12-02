@@ -8,6 +8,10 @@ import Basket from "./components/Basket";
 import Footer from "./components/Footer";
 import StyledApp from "./styledComponents/StyledApp";
 import StyledMain from "./styledComponents/StyledMain";
+import ShipPay from "./components/footer-navbar/ShipPay";
+import Terms from "./components/footer-navbar/Terms";
+import Privacy from "./components/footer-navbar/Privacy";
+import About from "./components/footer-navbar/About";
 
 function App() {
   return (
@@ -23,6 +27,18 @@ function App() {
             </Route>
             <Route path="/basket">
               <Basket />
+            </Route>
+            <Route path="/shipping-payment">
+              <ShipPay />
+            </Route>
+            <Route path="/terms-conditions">
+              <Terms />
+            </Route>
+            <Route path="/privacy-policy">
+              <Privacy />
+            </Route>
+            <Route path="/about">
+              <About />
             </Route>
           </Switch>
         </StyledMain>
