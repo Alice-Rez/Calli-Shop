@@ -13,7 +13,10 @@ export default function Privacy() {
         <StyledLink to={isInBasket ? "/basket" : "/"}>x</StyledLink>
       </StyledCloseButton>
       <h4>Privacy Policy</h4>
-      <p>We are respecting all rights for privacy accordingly to GDPR.</p>
+      <p>
+        This is just serverless mock-up of the e-shop, it{" "}
+        <strong>collects no data, sends data nowhere</strong>.
+      </p>
     </StyledSection>
   );
 }
