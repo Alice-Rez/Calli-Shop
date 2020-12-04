@@ -1,5 +1,7 @@
 <h1><img align="center" src="./README-materials/title.png" width="100%"> </h1>
 
+"Make somebody happy with our calligraphy"
+
 Explore [Live demo](https://callishop.alice-rez.vercel.app/) or look at previews in [Gallery](#gallery)
 
 ## Description
