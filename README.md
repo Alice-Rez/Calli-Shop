@@ -14,7 +14,7 @@ Mock up of the e-shop selling calligraphies - project created at the end of the 
 
 - when product called "Customized names" is add to the basket, form for adding details such as which name should be written and if it should be written individually or added to one of the calligraphies appears (the options for choosing where the names will be written corresponds to items added to the basket - just the ones that have possibility to add name - as is written in product description in shop part - is displayed in select)
 
-- user can go through the steps of the order - add personal information and choose shipping and payment option
+- user can go through the steps of the order - add personal information and choose shipping and payment option (cash payment option can be chosen just together with picking order personally in the shop)
 
 - all forms have implemented basic validation
 
