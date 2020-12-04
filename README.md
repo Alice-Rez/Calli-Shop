@@ -1,6 +1,6 @@
 <h1><img align="center" src="./README-materials/title.png" width="100%"> </h1>
 
-[Live demo](https://callishop.alice-rez.vercel.app/)
+Explore [Live demo](https://callishop.alice-rez.vercel.app/) or look at previews in [Gallery](#gallery)
 
 ## Description
 
