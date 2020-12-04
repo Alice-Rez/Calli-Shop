@@ -2,7 +2,7 @@
 
 [Live demo](https://callishop.alice-rez.vercel.app/)
 
-Mock up of the e-shop selling calligraphies - project created at the end of the React module of my one year web development course. Just frontend application without server, so the order is not in reality send anywhere, but posses all basic functionalities of small e-shop with shopping without registration:
+Mock up of the e-shop selling calligraphies - project created at the end of the React module of my one year web development course. Just frontend application without server or database, so the order is not in reality send anywhere, but posses all basic functionalities of small e-shop with shopping without registration:
 
 - user can choose quantity and add product to the basket
 
