@@ -1,4 +1,6 @@
-# Calli-Shop
+<h1><img align="center" src="./README-materials/title.png" width="100%"> </h1>
+
+[Live demo](https://callishop.alice-rez.vercel.app/)
 
 Mock up of the e-shop selling calligraphies - project created at the end of the React module of my one year web development course.
 
