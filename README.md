@@ -24,6 +24,8 @@ Mock up of the e-shop selling calligraphies - project created at the end of the 
 
 - all forms have implemented basic validation
 
+- order pages contain custom stepper, that is showing in which stage of order is user currently (in future there is a plan to add possibility to click on step number and go directly to that step)
+
 - user can go back in the order without necessity to fill the data once again
 
 - at the end, user can see the summary of the whole order (where is also written, which name and for what calligraphy was added - if added) and "send it"
