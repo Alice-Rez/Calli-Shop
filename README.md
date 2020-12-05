@@ -14,7 +14,7 @@ Mock up of the e-shop selling calligraphies - project created at the end of the 
 
 - in the basket they can also change quantities of the products or delete the whole basket item
 
-<img align="right" src="./README-materials/calli-details.png" width="50%">
+<img align="right" src="./README-materials/calli-details.png" width="60%">
 
 - when product called "Customized names" is add to the basket, form for adding details such as which name should be written and if it should be written individually or added to one of the calligraphies appears (the options for choosing where the names will be written corresponds to items added to the basket - just the ones that have possibility to add name - as is written in product description in shop part - is displayed in select)
 
