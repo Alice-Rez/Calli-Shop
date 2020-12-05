@@ -14,9 +14,11 @@ Mock up of the e-shop selling calligraphies - project created at the end of the 
 
 - in the basket they can also change quantities of the products or delete the whole basket item
 
+- the price per product (when more quantities is ordered) and total price for order are calculated and displayed on 2 decimal places.
+
 <img align="right" src="./README-materials/calli-details.png" width="60%">
 
-- when product called "Customized names" is add to the basket, form for adding details such as which name should be written and if it should be written individually or added to one of the calligraphies appears (the options for choosing where the names will be written corresponds to items added to the basket - just the ones that have possibility to add name - as is written in product description in shop part - is displayed in select)
+- when special product called "Customized names" is add to the basket, form for adding details such as which name should be written and if it should be written individually or added to one of the calligraphies appears (the options for choosing where the names will be written corresponds to items added to the basket - just the ones that have possibility to add name - as is written in product description in shop part - is displayed in select)
 
 - user can go through the steps of the order - add personal information and choose shipping and payment option (cash payment option can be chosen just together with picking order personally in the shop)
 
@@ -65,6 +67,54 @@ Source code is under the [MIT](./LICENSE) license. **All rights to calligraphy g
 **Fig.2** : Lower part of the main page with depicting of the sold out product as well as with secondary navigation
 
 <img align="center" src="./README-materials/calli-site-end.png" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.3** : Basket content with possibilities of delete items, change quantities and add details when some specific product is ordered
+
+<img align="center" src="./README-materials/calli-basket.png" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.4** : First step of order - adding personal data
+
+<img align="center" src="./README-materials/calli-order1.png" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.5** : Warning displayed when the form do not pass the validation
+
+<img align="center" src="./README-materials/calli-warning.png" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.6** : Second step of the order - choosing shipping and payment methods
+
+<img align="center" src="./README-materials/calli-order2.png" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.7** : Final step of order - summarization of the whole order before user send it
+
+<img align="center" src="./README-materials/calli-order3.png" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.8** : Succesfull message after sending of the order with possibility to go back to shop
+
+<img align="center" src="./README-materials/calli-ordered.png" width="100%">
 
 </br>
 </br>
