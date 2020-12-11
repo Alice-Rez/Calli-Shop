@@ -4,6 +4,8 @@
 
 Explore [Live demo](https://callishop.alice-rez.vercel.app/) or look at previews in [Gallery](#gallery)
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 ## Description
 
 Mock up of the e-shop selling calligraphies - project created at the end of the React module of my one year web development course. Just frontend application without server or database, so the order is not in reality send anywhere, but posses all basic functionalities of small e-shop with shopping without registration:
