@@ -11,12 +11,12 @@ const StyledFooter = styled.footer`
   font-size: 0.8rem;
 
   img {
-    width: 7%;
+    width: 25px;
     transform: translateY(40%);
 
-    @media ${device.tabletPortrait} {
+    /* @media ${device.tabletPortrait} {
       width: 10%;
-    }
+    } */
   }
 
   a {
