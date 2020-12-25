@@ -13,10 +13,6 @@ const StyledFooter = styled.footer`
   img {
     width: 25px;
     transform: translateY(40%);
-
-    /* @media ${device.tabletPortrait} {
-      width: 10%;
-    } */
   }
 
   a {
