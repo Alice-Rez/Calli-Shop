@@ -53,21 +53,11 @@ export default function OrderDetails(props) {
   }, [items]);
 
   useEffect(() => {
-    let helper = [];
-    // nullArray();
-    // setCustomQtyArray(null);
-    // setCustomQtyArray([]);
-    console.log("before for loop:", customQtyArray, namesQty);
+    // setCustomQtyArray((array) => []);
+    setCustomQtyArray([]);
     for (let i = 1; i <= namesQty; i++) {
-      console.log("in the loop:", customQtyArray, namesQty);
-      // setCustomQtyArray([...customQtyArray, i]);
-      helper.push(i);
+      setCustomQtyArray((customQtyArray) => [...customQtyArray, i]);
     }
-    console.log("after for loop:", customQtyArray, namesQty);
-    setCustomQtyArray(helper);
-    // return () => {
-    //   setCustomQtyArray([]);
-    // };
   }, [namesQty]);
 
   // for deleting values in details when removed customized name qty
